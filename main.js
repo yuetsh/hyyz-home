@@ -49,4 +49,4 @@ document.querySelector("#app").innerHTML = `
 </div>
 `
 
-document.querySelector("#sites").innerHTML = sites.map(item)
+document.querySelector("#sites").innerHTML = sites.map(item).join("")
