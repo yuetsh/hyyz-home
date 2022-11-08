@@ -24,12 +24,12 @@ const sites = [
   {
     url: "https://huabu.hyyz.izhai.net",
     title: "在线画布",
-    description: " Excalidraw",
+    description: "咖喱棒",
   },
   {
     url: "https://blog.hyyz.izhai.net",
     title: "博客",
-    description: "博客",
+    description: "大溪地",
   },
 ]
 
