@@ -29,7 +29,7 @@ const sites = [
   {
     url: "https://blog.hyyz.izhai.net",
     title: "博客",
-    description: "大溪地",
+    description: "前进四",
   },
 ]
 
