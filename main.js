@@ -1,4 +1,4 @@
-import "./style.css"
+import "./style.css";
 
 const sites = [
   {
@@ -26,14 +26,19 @@ const sites = [
     title: "在线画布",
     description: "咖喱棒",
   },
-]
+  {
+    url: "https://bbs.hyyz.izhai.net",
+    title: "在线论坛",
+    description: "BBS",
+  }
+];
 
 const item = (site) => `
 <a href="${site.url}" class="card">
   <h2>${site.title} &rarr;</h2>
   <p>徐越的${site.description} ${site.url}</p>
 </a>
-`
+`;
 
 document.querySelector("#app").innerHTML = `
 <div class="container">
@@ -42,6 +47,6 @@ document.querySelector("#app").innerHTML = `
     <div class="grid" id="sites"></div>
   </main>
 </div>
-`
+`;
 
-document.querySelector("#sites").innerHTML = sites.map(item).join("")
+document.querySelector("#sites").innerHTML = sites.map(item).join("");
