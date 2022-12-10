@@ -26,11 +26,6 @@ const sites = [
     title: "在线画布",
     description: "咖喱棒",
   },
-  {
-    url: "https://blog.hyyz.izhai.net",
-    title: "博客",
-    description: "前进四",
-  },
 ]
 
 const item = (site) => `
