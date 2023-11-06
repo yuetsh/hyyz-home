@@ -24,12 +24,7 @@ const sites = [
   {
     url: "https://ppt.hyyz.izhai.net/py",
     title: "Python PPT",
-    description: "Python 课件",
-  },
-  {
-    url: "https://survey.hyyz.izhai.net",
-    title: "问卷系统网站",
-    description: "问卷",
+    description: "Python课件",
   },
   {
     url: "https://huabu.hyyz.izhai.net",
