@@ -17,13 +17,6 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: CI=false npm run build
-
-      - uses: appleboy/ssh-action@v0.1.4
-        with:
-          username: root
-          host: ${{ secrets.HOST }}
-          key: ${{ secrets.KEY }}
-          script: docker compose -f /root/Home/docker-compose.yml down
       
       - uses: easingthemes/ssh-deploy@v2.2.11
         env:
@@ -33,10 +26,3 @@ jobs:
           SOURCE: dist/
           REMOTE_USER: root
           TARGET: /root/Home/build
-
-      - uses: appleboy/ssh-action@v0.1.4
-        with:
-          username: root
-          host: ${{ secrets.HOST }}
-          key: ${{ secrets.KEY }}
-          script: docker compose -f /root/Home/docker-compose.yml up -d
