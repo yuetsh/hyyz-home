@@ -24,7 +24,7 @@ const sites = [
   {
     url: "https://ppt.hyyz.izhai.net/py",
     title: "Python PPT",
-    description: "Python课件",
+    description: " Python 课件",
   },
   {
     url: "https://huabu.hyyz.izhai.net",
@@ -34,7 +34,7 @@ const sites = [
 ]
 
 const item = (site) => `
-<a href="${site.url}" class="card">
+<a href="${site.url}" target="_blank" class="card">
   <h2>${site.title} &rarr;</h2>
   <p>徐越的${site.description}\n${site.url}</p>
 </a>
