@@ -17,21 +17,31 @@ const sites = [
     description: "编程书",
   },
   {
+    url: "https://play.hyyz.izhai.net",
+    title: "格式练习网站",
+    description: "练习册",
+  },
+  {
+    url: "https://ppt.hyyz.izhai.net/py",
+    title: "Python PPT",
+    description: "Python 课件",
+  },
+  {
     url: "https://survey.hyyz.izhai.net",
     title: "问卷系统网站",
-    description: "问卷姬",
+    description: "问卷",
   },
   {
     url: "https://huabu.hyyz.izhai.net",
-    title: "在线画布",
-    description: "咖喱棒",
+    title: "画布",
+    description: "在线板书",
   },
 ]
 
 const item = (site) => `
 <a href="${site.url}" class="card">
   <h2>${site.title} &rarr;</h2>
-  <p>徐越的${site.description} ${site.url}</p>
+  <p>徐越的${site.description}\n${site.url}</p>
 </a>
 `
 
