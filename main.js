@@ -40,13 +40,4 @@ const item = (site) => `
 </a>
 `
 
-document.querySelector("#app").innerHTML = `
-<div class="container">
-  <main class="main">
-    <h1 class="title">徐越的在线学习平台</h1>
-    <div class="grid" id="sites"></div>
-  </main>
-</div>
-`
-
 document.querySelector("#sites").innerHTML = sites.map(item).join("")
