@@ -11,26 +11,26 @@ const sites = [
     title: "代码运行网站",
     description: "自测猫",
   },
-  // {
-  //   url: "https://book.xu'yue",
-  //   title: "编程知识网站",
-  //   description: "编程书",
-  // },
-  // {
-  //   url: "https://play.hyyz.izhai.net",
-  //   title: "格式练习网站",
-  //   description: "练习册",
-  // },
-  // {
-  //   url: "https://ppt.hyyz.izhai.net/py",
-  //   title: "Python PPT",
-  //   description: " Python 课件",
-  // },
-  // {
-  //   url: "https://huabu.hyyz.izhai.net",
-  //   title: "画布",
-  //   description: "在线板书",
-  // },
+  {
+    url: "https://ppt.xuyue.cc/py",
+    title: "Python PPT",
+    description: " Python 课件",
+  },
+  {
+    url: "https://book.xuyue.cc",
+    title: "编程知识网站",
+    description: "编程书",
+  },
+  {
+    url: "https://play.xuyue.cc",
+    title: "格式练习网站",
+    description: "练习册",
+  },
+  {
+    url: "https://huabu.hyyz.izhai.net",
+    title: "画布",
+    description: "在线板书",
+  },
 ]
 
 const item = (site) => `
