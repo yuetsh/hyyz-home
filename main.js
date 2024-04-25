@@ -13,13 +13,8 @@ const sites = [
   },
   {
     url: "https://python.xuyue.cc",
-    title: "Python 基础（基于 Thonny）",
+    title: "Python 基础",
     description: " Python 笔记",
-  },
-  {
-    url: "https://book.xuyue.cc",
-    title: "编程知识网站",
-    description: "编程书",
   },
   {
     url: "https://play.xuyue.cc",
