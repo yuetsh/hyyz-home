@@ -12,9 +12,9 @@ const sites = [
     description: "自测猫",
   },
   {
-    url: "https://ppt.xuyue.cc/py",
-    title: "Python PPT",
-    description: " Python 课件",
+    url: "https://python.xuyue.cc",
+    title: "Python 基础（基于 Thonny）",
+    description: " Python 笔记",
   },
   {
     url: "https://book.xuyue.cc",
