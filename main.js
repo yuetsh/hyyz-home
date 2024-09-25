@@ -22,7 +22,7 @@ const sites = [
     description: "练习册",
   },
   {
-    url: "https://huabu.hyyz.izhai.net",
+    url: "https://huabu.xuyue.cc",
     title: "画布",
     description: "在线板书",
   },
