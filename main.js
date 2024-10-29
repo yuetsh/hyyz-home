@@ -12,14 +12,19 @@ const sites = [
     description: "自测猫",
   },
   {
+    url: "https://book.xuyue.cc",
+    title: "编程书",
+    description: "编程和计算机相关知识汇总",
+  },
+  {
     url: "https://python.xuyue.cc",
     title: "Python 基础",
-    description: " Python 笔记",
+    description: "Python 第二学期上课用",
   },
   {
     url: "https://play.xuyue.cc",
     title: "格式练习网站",
-    description: "练习册",
+    description: "用来练习基本的代码格式",
   },
   {
     url: "https://huabu.xuyue.cc",
@@ -31,7 +36,7 @@ const sites = [
 const item = (site) => `
 <a href="${site.url}" target="_blank" class="card">
   <h2>${site.title} &rarr;</h2>
-  <p>徐越的${site.description}\n${site.url}</p>
+  <p>${site.description}\n${site.url}</p>
 </a>
 `
 
