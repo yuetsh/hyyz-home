@@ -3,13 +3,13 @@ import "./style.css"
 const sites = [
   {
     url: "https://oj.xuyue.cc",
-    title: "在线判题网站",
-    description: "判题狗",
+    title: "判题狗",
+    description: "在线判题网站",
   },
   {
     url: "https://code.xuyue.cc",
-    title: "代码运行网站",
-    description: "自测猫",
+    title: "自测猫",
+    description: "代码运行网站",
   },
   {
     url: "https://book.xuyue.cc",
