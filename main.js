@@ -23,7 +23,7 @@ const sites = [
   },
   {
     url: "https://play.xuyue.cc",
-    title: "格式练习网站",
+    title: "练习册",
     description: "用来练习基本的代码格式",
   },
   {
