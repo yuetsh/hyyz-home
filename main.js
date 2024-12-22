@@ -12,29 +12,29 @@ const sites = [
     description: "代码运行网站",
   },
   {
-    url: "https://book.xuyue.cc",
-    title: "编程书",
-    description: "编程和计算机相关知识汇总",
-  },
-  {
     url: "https://play.xuyue.cc",
     title: "练习册",
     description: "用来练习基本的代码格式",
   },
   {
     url: "https://lc.xuyue.cc",
-    title: "低代码",
-    description: "用来生成简单的表单和数据库教学",
+    title: "低代码平台",
+    description: "CRUD 和数据库教学",
   },
   {
-    url: "https://python.xuyue.cc",
-    title: "Python 基础",
-    description: "Python 第二学期上课用",
+    url: "https://book.xuyue.cc",
+    title: "编程书",
+    description: "编程和计算机相关知识汇总",
   },
   {
     url: "https://ppt.xuyue.cc/py",
     title: "Python PPT",
-    description: "上课用的 PPT",
+    description: "Python 第一学期上课用",
+  },
+  {
+    url: "https://python.xuyue.cc",
+    title: "Python 基础项目",
+    description: "Python 第二学期上课用",
   },
   {
     url: "https://huabu.xuyue.cc",
