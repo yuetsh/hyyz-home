@@ -17,14 +17,24 @@ const sites = [
     description: "编程和计算机相关知识汇总",
   },
   {
+    url: "https://play.xuyue.cc",
+    title: "练习册",
+    description: "用来练习基本的代码格式",
+  },
+  {
+    url: "https://lc.xuyue.cc",
+    title: "低代码",
+    description: "用来生成简单的表单和数据库教学",
+  },
+  {
     url: "https://python.xuyue.cc",
     title: "Python 基础",
     description: "Python 第二学期上课用",
   },
   {
-    url: "https://play.xuyue.cc",
-    title: "练习册",
-    description: "用来练习基本的代码格式",
+    url: "https://ppt.xuyue.cc/py",
+    title: "Python PPT",
+    description: "上课用的 PPT",
   },
   {
     url: "https://huabu.xuyue.cc",
