@@ -65,6 +65,10 @@ a {
   max-width: 300px;
 }
 
+.card.pin {
+  background-color: whitesmoke;
+}
+
 .card:hover,
 .card:focus,
 .card:active {
@@ -125,5 +129,9 @@ a {
 
   .card {
     border-color: #222;
+  }
+
+  .pin.card {
+    background-color: #222;
   }
 }

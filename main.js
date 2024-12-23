@@ -1,5 +1,18 @@
 import "./style.css"
 
+const pins = [
+  {
+    url: "https://code.xuyue.cc?query=30",
+    description: "12月25日 调试的示例代码",
+    pin: true,
+  },
+  {
+    url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
+    description: "12月25日 调试的记录单",
+    pin: true,
+  },
+]
+
 const sites = [
   {
     url: "https://oj.xuyue.cc",
@@ -7,7 +20,7 @@ const sites = [
     description: "在线判题网站",
   },
   {
-    url: "https://code.xuyue.cc?query=30",
+    url: "https://code.xuyue.cc",
     title: "自测猫",
     description: "代码运行网站",
   },
@@ -27,19 +40,19 @@ const sites = [
     description: "编程和计算机相关知识汇总",
   },
   {
+    url: "https://huabu.xuyue.cc",
+    title: "白板",
+    description: "在线板书",
+  },
+  {
     url: "https://ppt.xuyue.cc/py",
     title: "Python PPT",
     description: "Python 第一学期上课用",
   },
   {
     url: "https://python.xuyue.cc",
-    title: "Python 基础项目",
+    title: "Python 项目",
     description: "Python 第二学期上课用",
-  },
-  {
-    url: "https://huabu.xuyue.cc",
-    title: "画布",
-    description: "在线板书",
   },
 ]
 
@@ -51,4 +64,11 @@ const item = (site) => `
 </a>
 `
 
-document.querySelector("#sites").innerHTML = sites.map(item).join("")
+const pin = (site) => `
+<a href="${site.url}" target="_blank" class="card pin">
+  <p>${site.description}</p>
+</a>
+`
+
+document.querySelector("#sites").innerHTML =
+  pins.map(pin).join("") + sites.map(item).join("")
