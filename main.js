@@ -7,7 +7,7 @@ const sites = [
     description: "在线判题网站",
   },
   {
-    url: "https://code.xuyue.cc",
+    url: "https://code.xuyue.cc?query=30",
     title: "自测猫",
     description: "代码运行网站",
   },
