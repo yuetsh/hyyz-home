@@ -46,7 +46,8 @@ const sites = [
 const item = (site) => `
 <a href="${site.url}" target="_blank" class="card">
   <h2>${site.title} &rarr;</h2>
-  <p>${site.description}\n${site.url}</p>
+  <p>${site.description}</p>
+  <p class="single">${site.url}</p>
 </a>
 `
 

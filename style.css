@@ -53,6 +53,7 @@ a {
 }
 
 .card {
+  width: 100%;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -80,6 +81,13 @@ a {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.card .single {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
 }
 
 .beian {
