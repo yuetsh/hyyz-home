@@ -25,6 +25,11 @@ const sites = [
     description: "代码运行网站",
   },
   {
+    url: "https://web.xuyue.cc",
+    title: "Web前端",
+    description: "Web前端开发预览",
+  },
+  {
     url: "https://play.xuyue.cc",
     title: "练习册",
     description: "用来练习基本的代码格式",
