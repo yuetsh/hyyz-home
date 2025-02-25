@@ -35,11 +35,6 @@ const sites = [
     description: "用来练习基本的代码格式",
   },
   {
-    url: "https://lc.xuyue.cc",
-    title: "低代码平台",
-    description: "CRUD 和数据库教学",
-  },
-  {
     url: "https://book.xuyue.cc",
     title: "编程书",
     description: "编程和计算机相关知识汇总",
