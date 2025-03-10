@@ -1,16 +1,16 @@
 import "./style.css"
 
 const pins = [
-  // {
-  //   url: "https://code.xuyue.cc?query=30",
-  //   description: "12月25日 调试的示例代码",
-  //   pin: true,
-  // },
-  // {
-  //   url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
-  //   description: "12月25日 调试的记录单",
-  //   pin: true,
-  // },
+  {
+    url: "https://code.xuyue.cc?query=30",
+    description: "3月11日 调试的示例代码",
+    pin: true,
+  },
+  {
+    url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
+    description: "3月11日 调试的记录单",
+    pin: true,
+  },
 ]
 
 const sites = [
