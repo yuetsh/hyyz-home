@@ -40,6 +40,11 @@ const sites = [
     description: "编程和计算机相关知识汇总",
   },
   {
+    url: "https://lc.xuyue.cc",
+    title: "低代码",
+    description: "低代码平台",
+  },
+  {
     url: "https://huabu.xuyue.cc",
     title: "白板",
     description: "在线板书",
