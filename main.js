@@ -3,13 +3,19 @@ import "./style.css"
 const pins = [
   {
     url: "https://code.xuyue.cc?query=30",
-    description: "3月11日 调试的示例代码",
-    pin: true,
+    description: "示例代码",
   },
   {
     url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
-    description: "3月11日 调试的记录单",
-    pin: true,
+    description: "数据记录单",
+  },
+  {
+    url: "https://lc.xuyue.cc/",
+    description: "账号 stu 密码 123456",
+  },
+  {
+    url: "https://play.xuyue.cc/",
+    description: "选择自己的名字做小测试",
   },
 ]
 
@@ -38,11 +44,6 @@ const sites = [
     url: "https://book.xuyue.cc",
     title: "编程书",
     description: "编程和计算机相关知识汇总",
-  },
-  {
-    url: "https://lc.xuyue.cc",
-    title: "低代码",
-    description: "低代码平台",
   },
   {
     url: "https://huabu.xuyue.cc",
@@ -74,6 +75,10 @@ const pin = (site) => `
   <p>${site.description}</p>
 </a>
 `
+
+if (pins.length) {
+  document.querySelector(".subtitle").innerHTML = "置顶：3月11日所需要的内容"
+}
 
 document.querySelector("#sites").innerHTML =
   pins.map(pin).join("") + sites.map(item).join("")
