@@ -77,7 +77,7 @@ const pin = (site) => `
 `
 
 if (pins.length) {
-  document.querySelector(".subtitle").innerHTML = "置顶：3月11日所需要的内容"
+  document.querySelector(".subtitle").innerHTML = "置顶内容"
 }
 
 document.querySelector("#sites").innerHTML =
