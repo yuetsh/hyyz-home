@@ -32,12 +32,12 @@ const sites = [
   },
   {
     url: "https://web.xuyue.cc",
-    title: "Web前端",
+    title: "前端开发",
     description: "Web前端开发预览",
   },
   {
     url: "https://play.xuyue.cc",
-    title: "练习册",
+    title: "限时鸭",
     description: "用来练习基本的代码格式",
   },
   {
