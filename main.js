@@ -32,8 +32,8 @@ const sites = [
   },
   {
     url: "https://web.xuyue.cc",
-    title: "前端开发",
-    description: "Web前端开发预览",
+    title: "AI x Web",
+    description: "AI x Web 新势力",
   },
   {
     url: "https://play.xuyue.cc",
