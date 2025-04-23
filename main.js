@@ -1,22 +1,22 @@
 import "./style.css"
 
 const pins = [
-  {
-    url: "https://code.xuyue.cc?query=30",
-    description: "示例代码",
-  },
-  {
-    url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
-    description: "数据记录单",
-  },
-  {
-    url: "https://lc.xuyue.cc/",
-    description: "账号 stu 密码 123456",
-  },
-  {
-    url: "https://play.xuyue.cc/",
-    description: "选择自己的名字做小测试",
-  },
+  // {
+  //   url: "https://code.xuyue.cc?query=30",
+  //   description: "示例代码",
+  // },
+  // {
+  //   url: "https://lc.xuyue.cc/public-forms/do0zqi0xlpe",
+  //   description: "数据记录单",
+  // },
+  // {
+  //   url: "https://lc.xuyue.cc/",
+  //   description: "账号 stu 密码 123456",
+  // },
+  // {
+  //   url: "https://play.xuyue.cc/",
+  //   description: "选择自己的名字做小测试",
+  // },
 ]
 
 const sites = [
