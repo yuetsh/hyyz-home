@@ -21,46 +21,46 @@ const pins = [
 
 const sites = [
   {
-    url: "https://oj.xuyue.cc",
+    url: import.meta.env.VITE_OJ,
     title: "判题狗",
     description: "在线判题网站",
   },
   {
-    url: "https://code.xuyue.cc",
+    url: import.meta.env.VITE_CODE,
     title: "自测猫",
     description: "代码运行网站",
   },
   {
-    url: "https://web.xuyue.cc",
+    url: import.meta.env.VITE_WEB,
     title: "AI x Web",
     description: "AI x Web 新势力",
   },
   {
-    url: "https://play.xuyue.cc",
+    url: import.meta.env.VITE_PLAY,
     title: "限时鸭",
     description: "用来练习基本的代码格式",
   },
   {
-    url: "https://book.xuyue.cc",
+    url: import.meta.env.VITE_BOOK,
     title: "编程书",
     description: "编程和计算机相关知识汇总",
   },
   {
-    url: "https://huabu.xuyue.cc",
+    url: import.meta.env.VITE_HUABU,
     title: "白板",
     description: "在线板书",
   },
   {
-    url: "https://ppt.xuyue.cc/py",
+    url: import.meta.env.VITE_PPT,
     title: "Python PPT",
     description: "Python 第一学期上课用",
   },
   {
-    url: "https://python.xuyue.cc",
+    url: import.meta.env.VITE_PY,
     title: "Python 项目",
     description: "Python 第二学期上课用",
   },
-]
+].filter(i => !!i.url)
 
 const item = (site) => `
 <a href="${site.url}" target="_blank" class="card">
