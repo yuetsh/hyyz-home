@@ -36,6 +36,11 @@ const sites = [
     description: "AI x Web 新势力",
   },
   {
+    url: import.meta.env.VITE_SHUATI,
+    title: "刷题鸭",
+    description: "梁老师的刷题网站",
+  },
+  {
     url: import.meta.env.VITE_PLAY,
     title: "限时鸭",
     description: "用来练习基本的代码格式",
