@@ -33,7 +33,7 @@ const sites = [
   {
     url: import.meta.env.VITE_WEB,
     title: "AI x Web",
-    description: "AI x Web 新势力",
+    description: "Web 前端开发",
   },
   {
     url: import.meta.env.VITE_SHUATI,
@@ -65,7 +65,7 @@ const sites = [
     title: "Python 项目",
     description: "Python 第二学期上课用",
   },
-].filter(i => !!i.url)
+].filter((i) => !!i.url)
 
 const item = (site) => `
 <a href="${site.url}" target="_blank" class="card">
