@@ -1,5 +1,3 @@
-import "./style.css"
-
 const pins = [
   // {
   //   url: "https://code.xuyue.cc?query=30",
@@ -24,54 +22,66 @@ const sites = [
     url: import.meta.env.VITE_OJ,
     title: "判题狗",
     description: "在线判题网站",
+    icon: "noto--dog-face.svg",
   },
   {
     url: import.meta.env.VITE_CODE,
     title: "自测猫",
     description: "代码运行网站",
+    icon: "noto--cat-face.svg",
   },
   {
     url: import.meta.env.VITE_WEB,
-    title: "AI x Web",
+    title: "哈基米",
     description: "Web 前端开发",
+    icon: "noto--honeybee.svg",
   },
   {
     url: import.meta.env.VITE_SHUATI,
     title: "刷题鸭",
     description: "梁老师的刷题网站",
+    icon: "noto--paintbrush.svg",
   },
   {
     url: import.meta.env.VITE_PLAY,
     title: "限时鸭",
     description: "用来练习基本的代码格式",
+    icon: "noto--duck.svg",
   },
   {
     url: import.meta.env.VITE_BOOK,
     title: "编程书",
     description: "编程和计算机相关知识汇总",
+    icon: "noto--bookmark-tabs.svg",
   },
   {
     url: import.meta.env.VITE_HUABU,
     title: "白板",
     description: "在线板书",
+    icon: "noto--artist-palette.svg",
   },
   {
     url: import.meta.env.VITE_PPT,
     title: "Python PPT",
     description: "Python 第一学期上课用",
+    icon: "material-icon-theme--python.svg",
   },
   {
     url: import.meta.env.VITE_PY,
     title: "Python 项目",
     description: "Python 第二学期上课用",
+    icon: "material-icon-theme--folder-python-open.svg",
   },
 ].filter((i) => !!i.url)
 
 const item = (site) => `
 <a href="${site.url}" target="_blank" class="card">
-  <h2>${site.title} &rarr;</h2>
-  <p>${site.description}</p>
-  <p class="single">${site.url}</p>
+<div class="title-icon">
+${site.icon ? `<img src="/icons/${site.icon}" alt="${site.title}" class="icon" />` : ""}
+<h2>${site.title} &rarr;</h2>
+</div>
+<p>${site.description}</p>
+<p class="single">${site.url}</p>
 </a>
 `
 

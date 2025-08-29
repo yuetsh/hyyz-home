@@ -9,16 +9,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 'current'
+          node-version: 24
           cache: 'npm'
       - run: npm install
       - run: CI=false npm run build
       
-      - uses: easingthemes/ssh-deploy@v2.2.11
+      - uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
           REMOTE_HOST: ${{ secrets.HOST }}
