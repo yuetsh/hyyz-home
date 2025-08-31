@@ -34,7 +34,7 @@ const sites = [
   },
   {
     url: import.meta.env.VITE_WEB,
-    title: "前端蜂",
+    title: "哈基米",
     description: "Web 前端开发",
     icon: "noto--honeybee.svg",
   },
