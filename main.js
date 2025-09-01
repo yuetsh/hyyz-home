@@ -42,7 +42,7 @@ const sites = [
     url: import.meta.env.VITE_SHUATI,
     title: "刷题鸭",
     description: "梁老师的刷题网站",
-    icon: "",
+    icon: "noto--paintbrush.svg",
   },
   {
     url: import.meta.env.VITE_PLAY,
