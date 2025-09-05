@@ -92,6 +92,7 @@ a:hover {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   animation: adFloat 3s ease-in-out infinite, adShake 2s ease-in-out infinite, adFlash 1.5s ease-in-out infinite;
 }
@@ -195,8 +196,8 @@ a:hover {
 }
 
 @keyframes buttonPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: scale(1); -webkit-transform: scale(1); }
+  50% { transform: scale(1.05); -webkit-transform: scale(1.05); }
 }
 
 /* 爱心抖动效果 */
@@ -219,88 +220,88 @@ a:hover {
 
 @keyframes heartShake {
   0%, 100% { 
-    transform: translateX(0) translateY(0) rotate(0deg) scale(1); 
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1); -webkit-transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
   25% { 
-    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1); 
+    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1); -webkit-transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1);
   }
   50% { 
-    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2); 
+    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2); -webkit-transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
   }
   75% { 
-    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1); 
+    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1); -webkit-transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
   }
 }
 
 @keyframes textShake {
   0%, 100% { 
-    transform: translateX(0) translateY(0); 
+    transform: translateX(0) translateY(0); -webkit-transform: translateX(0) translateY(0);
   }
   10% { 
-    transform: translateX(-0.5px) translateY(-0.5px); 
+    transform: translateX(-0.5px) translateY(-0.5px); -webkit-transform: translateX(-0.5px) translateY(-0.5px);
   }
   20% { 
-    transform: translateX(0.5px) translateY(0.5px); 
+    transform: translateX(0.5px) translateY(0.5px); -webkit-transform: translateX(0.5px) translateY(0.5px);
   }
   30% { 
-    transform: translateX(-0.3px) translateY(0.3px); 
+    transform: translateX(-0.3px) translateY(0.3px); -webkit-transform: translateX(-0.3px) translateY(0.3px);
   }
   40% { 
-    transform: translateX(0.3px) translateY(-0.3px); 
+    transform: translateX(0.3px) translateY(-0.3px); -webkit-transform: translateX(0.3px) translateY(-0.3px);
   }
   50% { 
-    transform: translateX(-0.2px) translateY(0.2px); 
+    transform: translateX(-0.2px) translateY(0.2px); -webkit-transform: translateX(-0.2px) translateY(0.2px);
   }
   60% { 
-    transform: translateX(0.2px) translateY(-0.2px); 
+    transform: translateX(0.2px) translateY(-0.2px); -webkit-transform: translateX(0.2px) translateY(-0.2px);
   }
   70% { 
-    transform: translateX(-0.1px) translateY(0.1px); 
+    transform: translateX(-0.1px) translateY(0.1px); -webkit-transform: translateX(-0.1px) translateY(0.1px);
   }
   80% { 
-    transform: translateX(0.1px) translateY(-0.1px); 
+    transform: translateX(0.1px) translateY(-0.1px); -webkit-transform: translateX(0.1px) translateY(-0.1px);
   }
   90% { 
-    transform: translateX(0) translateY(0); 
+    transform: translateX(0) translateY(0); -webkit-transform: translateX(0) translateY(0);
   }
 }
 
 
 @keyframes adFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
+  50% { transform: translateY(-5px); -webkit-transform: translateY(-5px); }
 }
 
 @keyframes adShake {
   0%, 100% { 
-    transform: translateX(0) translateY(0) rotate(0deg); 
+    transform: translateX(0) translateY(0) rotate(0deg); -webkit-transform: translateX(0) translateY(0) rotate(0deg);
   }
   10% { 
-    transform: translateX(-3px) translateY(-3px) rotate(-2deg); 
+    transform: translateX(-3px) translateY(-3px) rotate(-2deg); -webkit-transform: translateX(-3px) translateY(-3px) rotate(-2deg);
   }
   20% { 
-    transform: translateX(3px) translateY(3px) rotate(2deg); 
+    transform: translateX(3px) translateY(3px) rotate(2deg); -webkit-transform: translateX(3px) translateY(3px) rotate(2deg);
   }
   30% { 
-    transform: translateX(-2px) translateY(2px) rotate(-1.5deg); 
+    transform: translateX(-2px) translateY(2px) rotate(-1.5deg); -webkit-transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
   }
   40% { 
-    transform: translateX(2px) translateY(-2px) rotate(1.5deg); 
+    transform: translateX(2px) translateY(-2px) rotate(1.5deg); -webkit-transform: translateX(2px) translateY(-2px) rotate(1.5deg);
   }
   50% { 
-    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg); 
+    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg); -webkit-transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
   }
   60% { 
-    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg); 
+    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg); -webkit-transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
   }
   70% { 
-    transform: translateX(-1px) translateY(1px) rotate(-0.5deg); 
+    transform: translateX(-1px) translateY(1px) rotate(-0.5deg); -webkit-transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
   }
   80% { 
-    transform: translateX(1px) translateY(-1px) rotate(0.5deg); 
+    transform: translateX(1px) translateY(-1px) rotate(0.5deg); -webkit-transform: translateX(1px) translateY(-1px) rotate(0.5deg);
   }
   90% { 
-    transform: translateX(0) translateY(0) rotate(0deg); 
+    transform: translateX(0) translateY(0) rotate(0deg); -webkit-transform: translateX(0) translateY(0) rotate(0deg);
   }
 }
 
@@ -345,6 +346,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: float 6s ease-in-out infinite;
@@ -377,19 +379,20 @@ a:hover {
   background: linear-gradient(45deg, #ff69b4 0%, #ff1493 25%, #da70d6 50%, #9370db 75%, #8a2be2 100%);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   text-shadow: none;
   animation: centerRotate 4s linear infinite, rainbow 3s ease-in-out infinite;
 }
 
 @keyframes centerRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+  100% { transform: rotate(360deg); -webkit-transform: rotate(360deg); }
 }
 
 @keyframes rainbow {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+  0% { -webkit-filter: hue-rotate(0deg); filter: hue-rotate(0deg); }
+  100% { -webkit-filter: hue-rotate(360deg); filter: hue-rotate(360deg); }
 }
 
 .title,
@@ -409,6 +412,11 @@ a:hover {
 @keyframes pulse {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
+  50% { transform: translateY(-10px); -webkit-transform: translateY(-10px); }
 }
 
 .grid {
@@ -441,6 +449,7 @@ a:hover {
   color: #4a4a4a;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 245, 0.8) 100%);
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   animation: cardFloat 4s ease-in-out infinite, cardRotate 8s linear infinite;
   transform-origin: center;
@@ -464,19 +473,19 @@ a:hover {
 }
 
 @keyframes shine {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); -webkit-transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
   50% { opacity: 1; }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); -webkit-transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
+  50% { transform: translateY(-5px); -webkit-transform: translateY(-5px); }
 }
 
 @keyframes cardRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+  100% { transform: rotate(360deg); -webkit-transform: rotate(360deg); }
 }
 
 .card.pin {
@@ -487,8 +496,8 @@ a:hover {
 }
 
 @keyframes pinPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: scale(1); -webkit-transform: scale(1); }
+  50% { transform: scale(1.05); -webkit-transform: scale(1.05); }
 }
 
 .card:hover,
@@ -497,6 +506,7 @@ a:hover {
   color: #ff1493;
   border-color: rgba(255, 20, 147, 0.8);
   transform: translateY(-8px) scale(1.02);
+  -webkit-transform: translateY(-8px) scale(1.02);
   box-shadow: 0 8px 25px rgba(255, 20, 147, 0.3);
   animation-play-state: paused;
 }
@@ -561,6 +571,7 @@ a:hover {
   padding: 1rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 182, 193, 0.2);
 }
@@ -712,6 +723,6 @@ a:hover {
 }
 
 @keyframes sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+  0%, 100% { transform: scale(1) rotate(0deg); -webkit-transform: scale(1) rotate(0deg); opacity: 0.7; }
+  50% { transform: scale(1.2) rotate(180deg); -webkit-transform: scale(1.2) rotate(180deg); opacity: 1; }
 }
