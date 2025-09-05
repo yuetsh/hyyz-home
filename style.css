@@ -2,23 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family:
-    "Orbitron",
-    "Roboto Mono",
-    "Fira Mono",
-    "Consolas",
-    monospace,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
   background:
     radial-gradient(
       circle at 20% 80%,
@@ -473,7 +456,6 @@ a:hover {
   color: #ff69b4;
   text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
   letter-spacing: 0.02em;
-  animation: centerRotate 4s linear infinite;
   transform-origin: center;
 }
 
@@ -493,17 +475,7 @@ a:hover {
   color: transparent;
   text-shadow: none;
   animation:
-    centerRotate 4s linear infinite,
     rainbow 3s ease-in-out infinite;
-}
-
-#floating-title {
-  position: absolute;
-  left: 50px;
-  top: 50px;
-  z-index: 1000;
-  transition: none;
-  user-select: none;
 }
 
 @keyframes centerRotate {
