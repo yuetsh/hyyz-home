@@ -15,6 +15,12 @@ body {
   overflow-x: hidden;
 }
 
+#app {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
 /* 添加可爱的装饰星星 */
 body::before {
   content: '';
@@ -58,10 +64,216 @@ a:hover {
   box-sizing: border-box;
 }
 
+/* 广告区域样式 */
+.ad-left,
+.ad-right {
+  width: 280px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-left {
+  left: 0;
+}
+
+.ad-right {
+  right: 0;
+}
+
+.ad-content {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(10px);
+  animation: adFloat 3s ease-in-out infinite;
+}
+
+.ad-content h3 {
+  color: #ff69b4;
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+}
+
+.ad-content p {
+  color: #9370db;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
+}
+
+.ad-placeholder {
+  width: 240px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(221, 160, 221, 0.3) 100%);
+  border: 2px solid rgba(255, 105, 180, 0.5);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff69b4;
+  font-weight: bold;
+  font-size: 0.8rem;
+  animation: adPulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-ad {
+  text-align: center;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff1493;
+  text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+  margin-bottom: 0.5rem;
+  animation: gameTitleGlow 2s ease-in-out infinite;
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: #9370db;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
+}
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.play-button {
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
+  animation: buttonPulse 1.5s ease-in-out infinite;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 20, 147, 0.5);
+}
+
+@keyframes gameTitleGlow {
+  0%, 100% { text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3); }
+  50% { text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.6), 0 0 12px rgba(255, 20, 147, 0.4); }
+}
+
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 爱心抖动效果 */
+.heart-shake {
+  display: inline-block;
+  color: #ff1493;
+  animation: heartShake 0.5s ease-in-out infinite;
+  text-shadow: 0 0 3px rgba(255, 20, 147, 0.6);
+  font-size: 1.2em;
+  margin: 0 0.1em;
+}
+
+.ad-title-shake,
+.ad-text-shake,
+.game-title-shake,
+.game-subtitle-shake,
+.play-button-shake {
+  animation: textShake 2s ease-in-out infinite;
+}
+
+@keyframes heartShake {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1); 
+  }
+  50% { 
+    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2); 
+  }
+  75% { 
+    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1); 
+  }
+}
+
+@keyframes textShake {
+  0%, 100% { 
+    transform: translateX(0) translateY(0); 
+  }
+  10% { 
+    transform: translateX(-0.5px) translateY(-0.5px); 
+  }
+  20% { 
+    transform: translateX(0.5px) translateY(0.5px); 
+  }
+  30% { 
+    transform: translateX(-0.3px) translateY(0.3px); 
+  }
+  40% { 
+    transform: translateX(0.3px) translateY(-0.3px); 
+  }
+  50% { 
+    transform: translateX(-0.2px) translateY(0.2px); 
+  }
+  60% { 
+    transform: translateX(0.2px) translateY(-0.2px); 
+  }
+  70% { 
+    transform: translateX(-0.1px) translateY(0.1px); 
+  }
+  80% { 
+    transform: translateX(0.1px) translateY(-0.1px); 
+  }
+  90% { 
+    transform: translateX(0) translateY(0); 
+  }
+}
+
+
+@keyframes adFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes adPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
 .container {
   padding: 0 2rem;
   position: relative;
   z-index: 2;
+  flex: 1;
+  margin: 0 300px;
 }
 .main {
   display: flex;
@@ -323,6 +535,16 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .ad-left,
+  .ad-right {
+    display: none;
+  }
+  
+  .container {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  
   .grid {
     width: 100%;
     flex-direction: column;
@@ -342,6 +564,38 @@ a:hover {
   
   .title {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .ad-left,
+  .ad-right {
+    width: 220px;
+  }
+  
+  .container {
+    margin: 0 240px;
+  }
+  
+  .ad-placeholder {
+    width: 180px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ad-left,
+  .ad-right {
+    width: 180px;
+  }
+  
+  .container {
+    margin: 0 200px;
+  }
+  
+  .ad-placeholder {
+    width: 140px;
+    height: 280px;
   }
 }
 
