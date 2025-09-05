@@ -67,7 +67,7 @@ a:hover {
 /* 广告区域样式 */
 .ad-left,
 .ad-right {
-  width: 280px;
+  width: 350px;
   min-height: 100vh;
   position: fixed;
   top: 0;
@@ -93,7 +93,7 @@ a:hover {
   text-align: center;
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
   backdrop-filter: blur(10px);
-  animation: adFloat 3s ease-in-out infinite;
+  animation: adFloat 3s ease-in-out infinite, adShake 2s ease-in-out infinite, adFlash 1.5s ease-in-out infinite;
 }
 
 .ad-content h3 {
@@ -111,8 +111,8 @@ a:hover {
 }
 
 .ad-placeholder {
-  width: 240px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(221, 160, 221, 0.3) 100%);
   border: 2px solid rgba(255, 105, 180, 0.5);
   border-radius: 10px;
@@ -138,7 +138,7 @@ a:hover {
 }
 
 .game-title {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #ff1493;
   text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
@@ -153,10 +153,18 @@ a:hover {
   text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
 }
 
+.ad-rental {
+  font-size: 1rem;
+  color: #ff69b4;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+  font-weight: bold;
+}
+
 .language-list {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.1rem;
   margin-top: 0.5rem;
   justify-content: center;
   align-items: center;
@@ -197,7 +205,7 @@ a:hover {
   color: #ff1493;
   animation: heartShake 0.5s ease-in-out infinite;
   text-shadow: 0 0 3px rgba(255, 20, 147, 0.6);
-  font-size: 1.2em;
+  font-size: 0.8em;
   margin: 0 0.1em;
 }
 
@@ -263,6 +271,58 @@ a:hover {
   50% { transform: translateY(-5px); }
 }
 
+@keyframes adShake {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) rotate(0deg); 
+  }
+  10% { 
+    transform: translateX(-3px) translateY(-3px) rotate(-2deg); 
+  }
+  20% { 
+    transform: translateX(3px) translateY(3px) rotate(2deg); 
+  }
+  30% { 
+    transform: translateX(-2px) translateY(2px) rotate(-1.5deg); 
+  }
+  40% { 
+    transform: translateX(2px) translateY(-2px) rotate(1.5deg); 
+  }
+  50% { 
+    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg); 
+  }
+  60% { 
+    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg); 
+  }
+  70% { 
+    transform: translateX(-1px) translateY(1px) rotate(-0.5deg); 
+  }
+  80% { 
+    transform: translateX(1px) translateY(-1px) rotate(0.5deg); 
+  }
+  90% { 
+    transform: translateX(0) translateY(0) rotate(0deg); 
+  }
+}
+
+@keyframes adFlash {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+  }
+  25% { 
+    opacity: 0.8;
+    box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 0 4px 25px rgba(255, 182, 193, 0.6);
+  }
+  75% { 
+    opacity: 0.9;
+    box-shadow: 0 4px 30px rgba(255, 182, 193, 0.8);
+  }
+}
+
 @keyframes adPulse {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
@@ -273,7 +333,7 @@ a:hover {
   position: relative;
   z-index: 2;
   flex: 1;
-  margin: 0 300px;
+  margin: 0 370px;
 }
 .main {
   display: flex;
@@ -567,35 +627,51 @@ a:hover {
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .ad-left,
   .ad-right {
-    width: 220px;
+    width: 300px;
   }
   
   .container {
-    margin: 0 240px;
+    margin: 0 320px;
   }
   
   .ad-placeholder {
-    width: 180px;
-    height: 320px;
+    width: 250px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .ad-left,
+  .ad-right {
+    width: 250px;
+  }
+  
+  .container {
+    margin: 0 270px;
+  }
+  
+  .ad-placeholder {
+    width: 200px;
+    height: 350px;
   }
 }
 
 @media (max-width: 1200px) {
   .ad-left,
   .ad-right {
-    width: 180px;
+    width: 200px;
   }
   
   .container {
-    margin: 0 200px;
+    margin: 0 220px;
   }
   
   .ad-placeholder {
-    width: 140px;
-    height: 280px;
+    width: 160px;
+    height: 300px;
   }
 }
 
