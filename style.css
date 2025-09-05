@@ -2,12 +2,47 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Orbitron', 'Roboto Mono', 'Fira Mono', 'Consolas', monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(221, 160, 221, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(173, 216, 230, 0.2) 0%, transparent 50%),
-    linear-gradient(135deg, #ffeef8 0%, #f0e6ff 25%, #e6f3ff 50%, #fff0f5 75%, #f8f0ff 100%);
+  font-family:
+    "Orbitron",
+    "Roboto Mono",
+    "Fira Mono",
+    "Consolas",
+    monospace,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  background:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 182, 193, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(221, 160, 221, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(173, 216, 230, 0.2) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #ffeef8 0%,
+      #f0e6ff 25%,
+      #e6f3ff 50%,
+      #fff0f5 75%,
+      #f8f0ff 100%
+    );
   color: #4a4a4a;
   min-height: 100vh;
   letter-spacing: 0.01em;
@@ -23,13 +58,13 @@ body {
 
 /* 添加可爱的装饰星星 */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(2px 2px at 20px 30px, #ff69b4, transparent),
     radial-gradient(2px 2px at 40px 70px, #ffb6c1, transparent),
     radial-gradient(1px 1px at 90px 40px, #dda0dd, transparent),
@@ -43,8 +78,12 @@ body::before {
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.8; }
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 /* 动漫风格链接 */
@@ -93,7 +132,10 @@ a:hover {
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  animation: adFloat 3s ease-in-out infinite, adShake 2s ease-in-out infinite, adFlash 1.5s ease-in-out infinite;
+  animation:
+    adFloat 3s ease-in-out infinite,
+    adShake 2s ease-in-out infinite,
+    adFlash 1.5s ease-in-out infinite;
 }
 
 .promo-content h3 {
@@ -113,7 +155,11 @@ a:hover {
 .promo-placeholder {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(221, 160, 221, 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 193, 0.3) 0%,
+    rgba(221, 160, 221, 0.3) 100%
+  );
   border: 2px solid rgba(255, 105, 180, 0.5);
   border-radius: 10px;
   display: flex;
@@ -170,7 +216,6 @@ a:hover {
   align-items: center;
 }
 
-
 .play-button {
   background: linear-gradient(45deg, #ff69b4, #ff1493);
   color: white;
@@ -190,13 +235,27 @@ a:hover {
 }
 
 @keyframes gameTitleGlow {
-  0%, 100% { text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3); }
-  50% { text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.6), 0 0 12px rgba(255, 20, 147, 0.4); }
+  0%,
+  100% {
+    text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+  }
+  50% {
+    text-shadow:
+      2px 2px 8px rgba(255, 20, 147, 0.6),
+      0 0 12px rgba(255, 20, 147, 0.4);
+  }
 }
 
 @keyframes buttonPulse {
-  0%, 100% { transform: scale(1); -webkit-transform: scale(1); }
-  50% { transform: scale(1.05); -webkit-transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
 }
 
 /* 爱心抖动效果 */
@@ -218,114 +277,154 @@ a:hover {
 }
 
 @keyframes heartShake {
-  0%, 100% { 
-    transform: translateX(0) translateY(0) rotate(0deg) scale(1); -webkit-transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    -webkit-transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
-  25% { 
-    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1); -webkit-transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1);
+  25% {
+    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1);
+    -webkit-transform: translateX(-1px) translateY(-1px) rotate(-2deg)
+      scale(1.1);
   }
-  50% { 
-    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2); -webkit-transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
+  50% {
+    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
+    -webkit-transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
   }
-  75% { 
-    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1); -webkit-transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
+  75% {
+    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
+    -webkit-transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
   }
 }
 
 @keyframes textShake {
-  0%, 100% { 
-    transform: translateX(0) translateY(0); -webkit-transform: translateX(0) translateY(0);
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+    -webkit-transform: translateX(0) translateY(0);
   }
-  10% { 
-    transform: translateX(-0.5px) translateY(-0.5px); -webkit-transform: translateX(-0.5px) translateY(-0.5px);
+  10% {
+    transform: translateX(-0.5px) translateY(-0.5px);
+    -webkit-transform: translateX(-0.5px) translateY(-0.5px);
   }
-  20% { 
-    transform: translateX(0.5px) translateY(0.5px); -webkit-transform: translateX(0.5px) translateY(0.5px);
+  20% {
+    transform: translateX(0.5px) translateY(0.5px);
+    -webkit-transform: translateX(0.5px) translateY(0.5px);
   }
-  30% { 
-    transform: translateX(-0.3px) translateY(0.3px); -webkit-transform: translateX(-0.3px) translateY(0.3px);
+  30% {
+    transform: translateX(-0.3px) translateY(0.3px);
+    -webkit-transform: translateX(-0.3px) translateY(0.3px);
   }
-  40% { 
-    transform: translateX(0.3px) translateY(-0.3px); -webkit-transform: translateX(0.3px) translateY(-0.3px);
+  40% {
+    transform: translateX(0.3px) translateY(-0.3px);
+    -webkit-transform: translateX(0.3px) translateY(-0.3px);
   }
-  50% { 
-    transform: translateX(-0.2px) translateY(0.2px); -webkit-transform: translateX(-0.2px) translateY(0.2px);
+  50% {
+    transform: translateX(-0.2px) translateY(0.2px);
+    -webkit-transform: translateX(-0.2px) translateY(0.2px);
   }
-  60% { 
-    transform: translateX(0.2px) translateY(-0.2px); -webkit-transform: translateX(0.2px) translateY(-0.2px);
+  60% {
+    transform: translateX(0.2px) translateY(-0.2px);
+    -webkit-transform: translateX(0.2px) translateY(-0.2px);
   }
-  70% { 
-    transform: translateX(-0.1px) translateY(0.1px); -webkit-transform: translateX(-0.1px) translateY(0.1px);
+  70% {
+    transform: translateX(-0.1px) translateY(0.1px);
+    -webkit-transform: translateX(-0.1px) translateY(0.1px);
   }
-  80% { 
-    transform: translateX(0.1px) translateY(-0.1px); -webkit-transform: translateX(0.1px) translateY(-0.1px);
+  80% {
+    transform: translateX(0.1px) translateY(-0.1px);
+    -webkit-transform: translateX(0.1px) translateY(-0.1px);
   }
-  90% { 
-    transform: translateX(0) translateY(0); -webkit-transform: translateX(0) translateY(0);
+  90% {
+    transform: translateX(0) translateY(0);
+    -webkit-transform: translateX(0) translateY(0);
   }
 }
 
-
 @keyframes adFloat {
-  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
-  50% { transform: translateY(-5px); -webkit-transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+  }
 }
 
 @keyframes adShake {
-  0%, 100% { 
-    transform: translateX(0) translateY(0) rotate(0deg); -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    -webkit-transform: translateX(0) translateY(0) rotate(0deg);
   }
-  10% { 
-    transform: translateX(-3px) translateY(-3px) rotate(-2deg); -webkit-transform: translateX(-3px) translateY(-3px) rotate(-2deg);
+  10% {
+    transform: translateX(-3px) translateY(-3px) rotate(-2deg);
+    -webkit-transform: translateX(-3px) translateY(-3px) rotate(-2deg);
   }
-  20% { 
-    transform: translateX(3px) translateY(3px) rotate(2deg); -webkit-transform: translateX(3px) translateY(3px) rotate(2deg);
+  20% {
+    transform: translateX(3px) translateY(3px) rotate(2deg);
+    -webkit-transform: translateX(3px) translateY(3px) rotate(2deg);
   }
-  30% { 
-    transform: translateX(-2px) translateY(2px) rotate(-1.5deg); -webkit-transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
+  30% {
+    transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
+    -webkit-transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
   }
-  40% { 
-    transform: translateX(2px) translateY(-2px) rotate(1.5deg); -webkit-transform: translateX(2px) translateY(-2px) rotate(1.5deg);
+  40% {
+    transform: translateX(2px) translateY(-2px) rotate(1.5deg);
+    -webkit-transform: translateX(2px) translateY(-2px) rotate(1.5deg);
   }
-  50% { 
-    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg); -webkit-transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
+  50% {
+    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
+    -webkit-transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
   }
-  60% { 
-    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg); -webkit-transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
+  60% {
+    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
+    -webkit-transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
   }
-  70% { 
-    transform: translateX(-1px) translateY(1px) rotate(-0.5deg); -webkit-transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
+  70% {
+    transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
+    -webkit-transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
   }
-  80% { 
-    transform: translateX(1px) translateY(-1px) rotate(0.5deg); -webkit-transform: translateX(1px) translateY(-1px) rotate(0.5deg);
+  80% {
+    transform: translateX(1px) translateY(-1px) rotate(0.5deg);
+    -webkit-transform: translateX(1px) translateY(-1px) rotate(0.5deg);
   }
-  90% { 
-    transform: translateX(0) translateY(0) rotate(0deg); -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+  90% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    -webkit-transform: translateX(0) translateY(0) rotate(0deg);
   }
 }
 
 @keyframes adFlash {
-  0%, 100% { 
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
   }
-  25% { 
+  25% {
     opacity: 0.8;
     box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
   }
-  50% { 
+  50% {
     opacity: 1;
     box-shadow: 0 4px 25px rgba(255, 182, 193, 0.6);
   }
-  75% { 
+  75% {
     opacity: 0.9;
     box-shadow: 0 4px 30px rgba(255, 182, 193, 0.8);
   }
 }
 
 @keyframes adPulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -352,8 +451,13 @@ a:hover {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .title {
@@ -365,7 +469,7 @@ a:hover {
 }
 
 .title {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: #ff69b4;
   text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
   letter-spacing: 0.02em;
@@ -375,13 +479,22 @@ a:hover {
 
 /* 动漫风格渐变文字 */
 .title.gradient {
-  background: linear-gradient(45deg, #ff69b4 0%, #ff1493 25%, #da70d6 50%, #9370db 75%, #8a2be2 100%);
+  background: linear-gradient(
+    45deg,
+    #ff69b4 0%,
+    #ff1493 25%,
+    #da70d6 50%,
+    #9370db 75%,
+    #8a2be2 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   text-shadow: none;
-  animation: centerRotate 4s linear infinite, rainbow 3s ease-in-out infinite;
+  animation:
+    centerRotate 4s linear infinite,
+    rainbow 3s ease-in-out infinite;
 }
 
 #floating-title {
@@ -394,13 +507,25 @@ a:hover {
 }
 
 @keyframes centerRotate {
-  0% { transform: rotate(0deg); -webkit-transform: rotate(0deg); }
-  100% { transform: rotate(360deg); -webkit-transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes rainbow {
-  0% { -webkit-filter: hue-rotate(0deg); filter: hue-rotate(0deg); }
-  100% { -webkit-filter: hue-rotate(360deg); filter: hue-rotate(360deg); }
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
 }
 
 .title,
@@ -418,13 +543,25 @@ a:hover {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
-  50% { transform: translateY(-10px); -webkit-transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+  }
 }
 
 .grid {
@@ -455,22 +592,33 @@ a:hover {
 /* 动漫风格卡片 */
 .card {
   color: #4a4a4a;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 245, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 240, 245, 0.8) 100%
+  );
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  animation: cardFloat 4s ease-in-out infinite, cardRotate 8s linear infinite;
+  animation:
+    cardFloat 4s ease-in-out infinite,
+    cardRotate 8s linear infinite;
   transform-origin: center;
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 182, 193, 0.1),
+    transparent
+  );
   transform: rotate(45deg);
   transition: all 0.6s ease;
   opacity: 0;
@@ -481,31 +629,67 @@ a:hover {
 }
 
 @keyframes shine {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); -webkit-transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); -webkit-transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    -webkit-transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    -webkit-transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); -webkit-transform: translateY(0px); }
-  50% { transform: translateY(-5px); -webkit-transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+  }
 }
 
 @keyframes cardRotate {
-  0% { transform: rotate(0deg); -webkit-transform: rotate(0deg); }
-  100% { transform: rotate(360deg); -webkit-transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 .card.pin {
-  background: linear-gradient(135deg, rgba(255, 192, 203, 0.9) 0%, rgba(255, 182, 193, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 192, 203, 0.9) 0%,
+    rgba(255, 182, 193, 0.8) 100%
+  );
   border-color: rgba(255, 105, 180, 0.6);
-  animation: pinPulse 2s ease-in-out infinite, cardRotate 8s linear infinite;
+  animation:
+    pinPulse 2s ease-in-out infinite,
+    cardRotate 8s linear infinite;
   transform-origin: center;
 }
 
 @keyframes pinPulse {
-  0%, 100% { transform: scale(1); -webkit-transform: scale(1); }
-  50% { transform: scale(1.05); -webkit-transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
 }
 
 .card:hover,
@@ -618,29 +802,29 @@ a:hover {
   .promo-right {
     display: none;
   }
-  
+
   .container {
     margin: 0;
     padding: 0 1rem;
   }
-  
+
   .grid {
     width: 100%;
     flex-direction: column;
     gap: 1rem;
   }
-  
-  .main { 
-    padding: 1.5rem; 
-    border-radius: 15px; 
+
+  .main {
+    padding: 1.5rem;
+    border-radius: 15px;
     margin: 1rem;
   }
-  
-  .card { 
-    max-width: 100%; 
-    margin: 0; 
+
+  .card {
+    max-width: 100%;
+    margin: 0;
   }
-  
+
   .title {
     font-size: 2rem;
   }
@@ -651,11 +835,11 @@ a:hover {
   .promo-right {
     width: 300px;
   }
-  
+
   .container {
     margin: 0 320px;
   }
-  
+
   .promo-placeholder {
     width: 250px;
     height: 400px;
@@ -667,11 +851,11 @@ a:hover {
   .promo-right {
     width: 250px;
   }
-  
+
   .container {
     margin: 0 270px;
   }
-  
+
   .promo-placeholder {
     width: 200px;
     height: 350px;
@@ -683,45 +867,20 @@ a:hover {
   .promo-right {
     width: 200px;
   }
-  
+
   .container {
     margin: 0 220px;
   }
-  
+
   .promo-placeholder {
     width: 160px;
     height: 300px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: #e0e0e0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(75, 0, 130, 0.1) 0%, transparent 50%),
-      linear-gradient(135deg, #1a0b2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
-  }
-
-  .card {
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(50, 20, 50, 0.8) 100%);
-    border-color: rgba(255, 105, 180, 0.4);
-    color: #e0e0e0;
-  }
-
-  .pin.card {
-    background: linear-gradient(135deg, rgba(40, 20, 40, 0.9) 0%, rgba(60, 30, 60, 0.8) 100%);
-  }
-}
-
 /* 添加更多动漫风格装饰 */
 .main::after {
-  content: '✨';
+  content: "✨";
   position: absolute;
   top: 20px;
   right: 20px;
@@ -742,7 +901,6 @@ a:hover {
   animation-fill-mode: both;
 }
 
-
 @keyframes rainFall {
   0% {
     transform: translateY(0) scale(1) rotate(0deg);
@@ -760,6 +918,15 @@ a:hover {
   }
 }
 @keyframes sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); -webkit-transform: scale(1) rotate(0deg); opacity: 0.7; }
-  50% { transform: scale(1.2) rotate(180deg); -webkit-transform: scale(1.2) rotate(180deg); opacity: 1; }
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    -webkit-transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
 }
