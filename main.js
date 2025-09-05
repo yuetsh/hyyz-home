@@ -1,5 +1,3 @@
-import "./style.css"
-
 const pins = [
   // {
   //   url: "https://code.xuyue.cc?query=30",
