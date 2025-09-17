@@ -1,7 +1,7 @@
 {
   "name": "hyyz-home",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "start": "vite --mode=production",
@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "prettier": "^3.6.2",
-    "vite": "^7.1.3"
+    "vite": "^7.1.5"
   }
 }
