@@ -2,502 +2,35 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background:
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(255, 182, 193, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(221, 160, 221, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(173, 216, 230, 0.2) 0%,
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
-      #ffeef8 0%,
-      #f0e6ff 25%,
-      #e6f3ff 50%,
-      #fff0f5 75%,
-      #f8f0ff 100%
-    );
-  color: #4a4a4a;
-  min-height: 100vh;
-  letter-spacing: 0.01em;
-  position: relative;
-  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-#app {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
-}
-
-/* 添加可爱的装饰星星 */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 40px 70px, #ffb6c1, transparent),
-    radial-gradient(1px 1px at 90px 40px, #dda0dd, transparent),
-    radial-gradient(1px 1px at 130px 80px, #87ceeb, transparent),
-    radial-gradient(2px 2px at 160px 30px, #ffc0cb, transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: twinkle 3s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-
-/* 动漫风格链接 */
 a {
-  color: #ff69b4;
-  text-shadow: 0 1px 2px rgba(255, 105, 180, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-}
-a:hover {
-  color: #ff1493;
-  text-shadow: 0 2px 4px rgba(255, 20, 147, 0.4);
-  transform: translateY(-1px);
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.promo-left,
-.promo-right {
-  width: 350px;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.promo-left {
-  left: 0;
-}
-
-.promo-right {
-  right: 0;
-}
-
-.promo-content {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(255, 182, 193, 0.3);
-  border-radius: 15px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  animation:
-    adFloat 3s ease-in-out infinite,
-    adShake 2s ease-in-out infinite,
-    adFlash 1.5s ease-in-out infinite;
-}
-
-.promo-content h3 {
-  color: #ff69b4;
-  font-size: 1.6rem;
-  margin: 0 0 0.5rem 0;
-  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
-}
-
-.promo-content p {
-  color: #9370db;
-  font-size: 1.2rem;
-  margin: 0.3rem 0;
-  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
-}
-
-.promo-placeholder {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 182, 193, 0.3) 0%,
-    rgba(221, 160, 221, 0.3) 100%
-  );
-  border: 2px solid rgba(255, 105, 180, 0.5);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ff69b4;
-  font-weight: bold;
-  font-size: 0.8rem;
-  animation: adPulse 2s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
-}
-
-.game-promo {
-  text-align: center;
-  padding: 1rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.game-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #ff1493;
-  text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
-  margin-bottom: 0.5rem;
-  animation: gameTitleGlow 2s ease-in-out infinite;
-}
-
-.game-subtitle {
-  font-size: 1.2rem;
-  color: #9370db;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
-}
-
-.promo-rental {
-  font-size: 1rem;
-  color: #ff69b4;
-  margin-top: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
-  font-weight: bold;
-}
-
-.language-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  margin-top: 0.5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.play-button {
-  background: linear-gradient(45deg, #ff69b4, #ff1493);
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
-  animation: buttonPulse 1.5s ease-in-out infinite;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(255, 20, 147, 0.5);
-}
-
-@keyframes gameTitleGlow {
-  0%,
-  100% {
-    text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
-  }
-  50% {
-    text-shadow:
-      2px 2px 8px rgba(255, 20, 147, 0.6),
-      0 0 12px rgba(255, 20, 147, 0.4);
-  }
-}
-
-@keyframes buttonPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-  }
-}
-
-/* 爱心抖动效果 */
-.heart-shake {
-  display: inline-block;
-  color: #ff1493;
-  animation: heartShake 0.5s ease-in-out infinite;
-  text-shadow: 0 0 3px rgba(255, 20, 147, 0.6);
-  font-size: 0.8em;
-  margin: 0 0.1em;
-}
-
-.promo-title-shake,
-.promo-text-shake,
-.game-title-shake,
-.game-subtitle-shake,
-.play-button-shake {
-  animation: textShake 2s ease-in-out infinite;
-}
-
-@keyframes heartShake {
-  0%,
-  100% {
-    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-    -webkit-transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-  }
-  25% {
-    transform: translateX(-1px) translateY(-1px) rotate(-2deg) scale(1.1);
-    -webkit-transform: translateX(-1px) translateY(-1px) rotate(-2deg)
-      scale(1.1);
-  }
-  50% {
-    transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
-    -webkit-transform: translateX(1px) translateY(1px) rotate(2deg) scale(1.2);
-  }
-  75% {
-    transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
-    -webkit-transform: translateX(-1px) translateY(1px) rotate(-1deg) scale(1.1);
-  }
-}
-
-@keyframes textShake {
-  0%,
-  100% {
-    transform: translateX(0) translateY(0);
-    -webkit-transform: translateX(0) translateY(0);
-  }
-  10% {
-    transform: translateX(-0.5px) translateY(-0.5px);
-    -webkit-transform: translateX(-0.5px) translateY(-0.5px);
-  }
-  20% {
-    transform: translateX(0.5px) translateY(0.5px);
-    -webkit-transform: translateX(0.5px) translateY(0.5px);
-  }
-  30% {
-    transform: translateX(-0.3px) translateY(0.3px);
-    -webkit-transform: translateX(-0.3px) translateY(0.3px);
-  }
-  40% {
-    transform: translateX(0.3px) translateY(-0.3px);
-    -webkit-transform: translateX(0.3px) translateY(-0.3px);
-  }
-  50% {
-    transform: translateX(-0.2px) translateY(0.2px);
-    -webkit-transform: translateX(-0.2px) translateY(0.2px);
-  }
-  60% {
-    transform: translateX(0.2px) translateY(-0.2px);
-    -webkit-transform: translateX(0.2px) translateY(-0.2px);
-  }
-  70% {
-    transform: translateX(-0.1px) translateY(0.1px);
-    -webkit-transform: translateX(-0.1px) translateY(0.1px);
-  }
-  80% {
-    transform: translateX(0.1px) translateY(-0.1px);
-    -webkit-transform: translateX(0.1px) translateY(-0.1px);
-  }
-  90% {
-    transform: translateX(0) translateY(0);
-    -webkit-transform: translateX(0) translateY(0);
-  }
-}
-
-@keyframes adFloat {
-  0%,
-  100% {
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-  }
-}
-
-@keyframes adShake {
-  0%,
-  100% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-    -webkit-transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  10% {
-    transform: translateX(-3px) translateY(-3px) rotate(-2deg);
-    -webkit-transform: translateX(-3px) translateY(-3px) rotate(-2deg);
-  }
-  20% {
-    transform: translateX(3px) translateY(3px) rotate(2deg);
-    -webkit-transform: translateX(3px) translateY(3px) rotate(2deg);
-  }
-  30% {
-    transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
-    -webkit-transform: translateX(-2px) translateY(2px) rotate(-1.5deg);
-  }
-  40% {
-    transform: translateX(2px) translateY(-2px) rotate(1.5deg);
-    -webkit-transform: translateX(2px) translateY(-2px) rotate(1.5deg);
-  }
-  50% {
-    transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
-    -webkit-transform: translateX(-1.5px) translateY(1.5px) rotate(-1deg);
-  }
-  60% {
-    transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
-    -webkit-transform: translateX(1.5px) translateY(-1.5px) rotate(1deg);
-  }
-  70% {
-    transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
-    -webkit-transform: translateX(-1px) translateY(1px) rotate(-0.5deg);
-  }
-  80% {
-    transform: translateX(1px) translateY(-1px) rotate(0.5deg);
-    -webkit-transform: translateX(1px) translateY(-1px) rotate(0.5deg);
-  }
-  90% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-    -webkit-transform: translateX(0) translateY(0) rotate(0deg);
-  }
-}
-
-@keyframes adFlash {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
-  }
-  25% {
-    opacity: 0.8;
-    box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
-  }
-  50% {
-    opacity: 1;
-    box-shadow: 0 4px 25px rgba(255, 182, 193, 0.6);
-  }
-  75% {
-    opacity: 0.9;
-    box-shadow: 0 4px 30px rgba(255, 182, 193, 0.8);
-  }
-}
-
-@keyframes adPulse {
-  0%,
-  100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 .container {
   padding: 0 2rem;
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  margin: 0 370px;
 }
+
 .main {
+  padding: 2rem 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
-  min-height: 100vh;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
 .title {
-  line-height: 1.2;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.title {
-  font-family: "Orbitron", sans-serif;
-  color: #ff69b4;
-  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
-  letter-spacing: 0.02em;
-  transform-origin: center;
-}
-
-/* 动漫风格渐变文字 */
-.title.gradient {
-  background: linear-gradient(
-    45deg,
-    #ff69b4 0%,
-    #ff1493 25%,
-    #da70d6 50%,
-    #9370db 75%,
-    #8a2be2 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: none;
-  animation:
-    rainbow 3s ease-in-out infinite;
-}
-
-@keyframes centerRotate {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    -webkit-filter: hue-rotate(0deg);
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    -webkit-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
+  line-height: 1.15;
+  font-size: 2rem;
 }
 
 .title,
@@ -506,34 +39,9 @@ a:hover {
 }
 
 .description {
-  margin: 2rem 0;
-  line-height: 1.6;
-  font-size: 1.2rem;
-  color: #9370db;
-  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-    -webkit-transform: translateY(-10px);
-  }
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
 }
 
 .grid {
@@ -541,164 +49,54 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin-top: 2rem;
+  max-width: 800px;
 }
 
 .card {
   width: 100%;
-  margin: 0;
+  margin: 1rem;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 2px solid rgba(255, 182, 193, 0.3);
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 动漫风格卡片 */
-.card {
-  color: #4a4a4a;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 240, 245, 0.8) 100%
-  );
-  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  animation:
-    cardFloat 4s ease-in-out infinite,
-    cardRotate 8s linear infinite;
-  transform-origin: center;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 182, 193, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-  opacity: 0;
-}
-
-.card:hover::before {
-  animation: shine 0.6s ease-in-out;
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    -webkit-transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-    -webkit-transform: translateX(100%) translateY(100%) rotate(45deg);
-    opacity: 0;
-  }
-}
-
-@keyframes cardFloat {
-  0%,
-  100% {
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-  }
-}
-
-@keyframes cardRotate {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-  }
 }
 
 .card.pin {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 192, 203, 0.9) 0%,
-    rgba(255, 182, 193, 0.8) 100%
-  );
-  border-color: rgba(255, 105, 180, 0.6);
-  animation:
-    pinPulse 2s ease-in-out infinite,
-    cardRotate 8s linear infinite;
-  transform-origin: center;
-}
-
-@keyframes pinPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-  }
+  background-color: whitesmoke;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #ff1493;
-  border-color: rgba(255, 20, 147, 0.8);
-  transform: translateY(-8px) scale(1.02);
-  -webkit-transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.3);
-  animation-play-state: paused;
+  color: #0070f3;
+  border-color: #0070f3;
 }
 
 .card h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ff69b4;
-  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
-  transition: all 0.3s ease;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
-.card:hover h2 {
-  color: #ff1493;
-  transform: scale(1.05);
+.card .title-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card .title-icon img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .card p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #666;
-  transition: all 0.3s ease;
-}
-
-.card:hover p {
-  color: #ff1493;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .card .single {
@@ -708,197 +106,44 @@ a:hover {
   white-space: nowrap;
 }
 
-.title-icon {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.title-icon .icon {
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3));
-}
-
-.card:hover .title-icon .icon {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 4px 8px rgba(255, 20, 147, 0.4));
-}
-
 .beian {
-  margin-top: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 182, 193, 0.2);
 }
 
 .beian img {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   margin: 0 4px;
-  transition: all 0.3s ease;
-}
-
-.beian img:hover {
-  transform: scale(1.2) rotate(10deg);
 }
 
 .beian a {
   text-decoration: none;
   font-size: 14px;
-  color: #9370db;
-  transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
-}
-
-.beian a:hover {
-  color: #ff69b4;
-  transform: translateY(-2px);
-}
-
-.beian {
-  color: #9370db;
-  text-shadow: 1px 1px 2px rgba(147, 112, 219, 0.3);
 }
 
 @media (max-width: 600px) {
-  .promo-left,
-  .promo-right {
-    display: none;
-  }
-
-  .container {
-    margin: 0;
-    padding: 0 1rem;
-  }
-
   .grid {
     width: 100%;
     flex-direction: column;
-    gap: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
 
-  .main {
-    padding: 1.5rem;
-    border-radius: 15px;
-    margin: 1rem;
+  body {
+    color: white;
+    background: black;
   }
 
   .card {
-    max-width: 100%;
-    margin: 0;
+    border-color: #222;
   }
 
-  .title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1600px) {
-  .promo-left,
-  .promo-right {
-    width: 300px;
-  }
-
-  .container {
-    margin: 0 320px;
-  }
-
-  .promo-placeholder {
-    width: 250px;
-    height: 400px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .promo-left,
-  .promo-right {
-    width: 250px;
-  }
-
-  .container {
-    margin: 0 270px;
-  }
-
-  .promo-placeholder {
-    width: 200px;
-    height: 350px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .promo-left,
-  .promo-right {
-    width: 200px;
-  }
-
-  .container {
-    margin: 0 220px;
-  }
-
-  .promo-placeholder {
-    width: 160px;
-    height: 300px;
-  }
-}
-
-/* 添加更多动漫风格装饰 */
-.main::after {
-  content: "✨";
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  animation: sparkle 2s ease-in-out infinite;
-  z-index: 1;
-}
-
-/* 雨滴图片动画样式 */
-
-.rain-icon {
-  position: fixed;
-  top: -64px;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 9999;
-  animation: rainFall linear forwards;
-  animation-fill-mode: both;
-}
-
-@keyframes rainFall {
-  0% {
-    transform: translateY(0) scale(1) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.85;
-  }
-  80% {
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateY(100vh) scale(0.8) rotate(360deg);
-    opacity: 0.1;
-  }
-}
-@keyframes sparkle {
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg);
-    -webkit-transform: scale(1) rotate(0deg);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.2) rotate(180deg);
-    -webkit-transform: scale(1.2) rotate(180deg);
-    opacity: 1;
+  .pin.card {
+    background-color: #222;
   }
 }
