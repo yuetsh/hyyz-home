@@ -97,3 +97,49 @@ if (pins.length) {
 
 document.querySelector("#sites").innerHTML =
   pins.map(pin).join("") + sites.map(item).join("")
+
+// 主题切换功能
+const themeToggle = document.getElementById("themeToggle");
+
+// 获取保存的主题或系统偏好
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    return savedTheme;
+  }
+  // 如果没有保存的主题，使用系统偏好
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+// 应用主题
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  // 图标通过 CSS 自动切换显示
+}
+
+// 切换主题
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+}
+
+// 初始化主题
+const initialTheme = getInitialTheme();
+setTheme(initialTheme);
+
+// 监听系统主题变化（仅在用户未手动设置时）
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (e) => {
+    // 如果用户没有手动设置过主题，则跟随系统
+    if (!localStorage.getItem("theme")) {
+      setTheme(e.matches ? "dark" : "light");
+    }
+  });
+
+// 绑定点击事件
+themeToggle.addEventListener("click", toggleTheme);

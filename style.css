@@ -5,15 +5,45 @@ body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
-    Segoe UI,
+    "Segoe UI",
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
+  min-height: 100vh;
+}
+
+/* Fluent 2 柔和渐变背景 */
+body {
+  background: linear-gradient(
+    135deg,
+    #e3f2fd 0%,
+    #f0f4ff 25%,
+    #f5f7fa 50%,
+    #e8f0f8 75%,
+    #dde8f5 100%
+  );
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* 添加微妙的纹理层 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 120, 212, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(106, 90, 205, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 a {
@@ -27,66 +57,134 @@ a {
 
 .container {
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  padding: 0;
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+.theme-icon-moon {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(0, 120, 212, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 120, 212, 0.3);
+  color: #0078d4;
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+  border-color: rgba(0, 120, 212, 0.4);
+  box-shadow: 
+    0 8px 24px rgba(0, 120, 212, 0.25),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #60cdff;
 }
 
 .main {
-  padding: 2rem 0;
+  padding: 3rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
-  line-height: 1.15;
-  font-size: 2rem;
+  line-height: 1.3;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* Fluent 2 风格的标题渐变 - 使用 Fluent 蓝系 */
+.title {
+  background: linear-gradient(
+    135deg,
+    #0078d4 0%,
+    #106ebe 30%,
+    #005a9e 60%,
+    #0078d4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .title,
 .description {
   text-align: center;
-}
-
-/* 彩虹标题效果 */
-.title {
-  font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #ff3cac,
-    #784ba0,
-    #2b86c5,
-    #00d4ff,
-    #00ff8c,
-    #ffd700,
-    #ff3cac
-  );
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; /* for Safari */
-  color: transparent;
-  animation: rainbow 8s linear infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .title {
-    animation: none;
-    background-position: 50% 50% !important;
-  }
 }
 
 .description {
@@ -103,6 +201,7 @@ a {
   max-width: 800px;
 }
 
+/* Fluent 2 亚克力玻璃卡片 */
 .card {
   width: 100%;
   margin: 1rem;
@@ -110,46 +209,124 @@ a {
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
   max-width: 300px;
+  
+  /* 亚克力玻璃效果 */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  
+  /* Fluent 2 圆角系统 - 等距圆角 */
+  border-radius: 12px;
+  
+  /* 高光描边效果 */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  
+  /* Fluent 交互动效 - 轻量空间变化 */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 120, 212, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(0, 120, 212, 0.1) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .card.pin {
-  background-color: whitesmoke;
+  background: rgba(247, 247, 247, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
+/* Fluent 2 Hover 效果 - 轻量上浮 */
 .card:hover,
-.card:focus,
+.card:focus {
+  color: #0078d4;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(0, 120, 212, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 120, 212, 0.3);
+}
+
+.card:hover::before,
+.card:focus::before {
+  opacity: 1;
+}
+
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  transform: translateY(0);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover h2,
+.card:focus h2 {
+  color: #0078d4;
 }
 
 .card .title-icon {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  gap: 0.75rem;
 }
 
 .card .title-icon img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.card:hover .title-icon img,
+.card:focus .title-icon img {
+  transform: scale(1.05);
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #605e5c;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover p,
+.card:focus p {
+  color: #323130;
 }
 
 .card .single {
@@ -160,7 +337,8 @@ a {
 }
 
 .beian {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  margin-top: 32px;
   text-align: center;
 }
 
@@ -168,11 +346,18 @@ a {
   width: 14px;
   height: 14px;
   margin: 0 4px;
+  vertical-align: middle;
 }
 
 .beian a {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  color: #605e5c;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.beian a:hover {
+  color: #0078d4;
 }
 
 @media (max-width: 600px) {
@@ -182,21 +367,100 @@ a {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Fluent 2 深色模式 */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
 
-  body {
-    color: white;
-    background: black;
-  }
+html[data-theme="dark"] body {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #1f1f1f 25%,
+    #1a1a1a 50%,
+    #1d1d1d 75%,
+    #1a1a1a 100%
+  );
+}
 
-  .card {
-    border-color: #222;
-  }
+html[data-theme="dark"] body::before {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 120, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(106, 90, 205, 0.08) 0%, transparent 50%);
+}
 
-  .pin.card {
-    background-color: #222;
-  }
+html[data-theme="dark"] .title {
+  background: linear-gradient(
+    135deg,
+    #60cdff 0%,
+    #4fc3f7 30%,
+    #29b6f6 60%,
+    #60cdff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+html[data-theme="dark"] .card {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 120, 212, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(0, 120, 212, 0.2) 100%
+  );
+}
+
+html[data-theme="dark"] .card h2 {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .card:hover h2,
+html[data-theme="dark"] .card:focus h2 {
+  color: #60cdff;
+}
+
+html[data-theme="dark"] .card:hover,
+html[data-theme="dark"] .card:focus {
+  border-color: rgba(0, 120, 212, 0.4);
+  box-shadow: 
+    0 8px 24px rgba(0, 120, 212, 0.25),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .card p {
+  color: #c8c6c4;
+}
+
+html[data-theme="dark"] .card:hover p,
+html[data-theme="dark"] .card:focus p {
+  color: #e1dfdd;
+}
+
+html[data-theme="dark"] .pin.card {
+  background: rgba(40, 40, 40, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+html[data-theme="dark"] .beian a {
+  color: #c8c6c4;
+}
+
+html[data-theme="dark"] .beian a:hover {
+  color: #60cdff;
 }
