@@ -85,7 +85,9 @@ const themeToggle = document.getElementById("themeToggle")
 const designThemeButton = document.getElementById("designThemeButton")
 const designThemeList = document.getElementById("designThemeList")
 
-const DESIGN_THEMES = ["fluent", "aurora", "forest", "sunset", "terminal"]
+const DESIGN_THEMES = ["fluent", "material-you", "terminal", "cyberpunk"]
+const FORCED_DARK_DESIGN_THEMES = new Set(["terminal", "cyberpunk"])
+const THEME_BEFORE_FORCED_KEY = "themeBeforeForcedDark"
 
 // 获取保存的主题或系统偏好
 function getInitialTheme() {
@@ -108,11 +110,9 @@ function setTheme(theme) {
 
 // 切换主题
 function toggleTheme() {
-  if (
-    document.documentElement.getAttribute("data-design-theme") === "terminal"
-  ) {
-    return
-  }
+  const designTheme =
+    document.documentElement.getAttribute("data-design-theme") || "fluent"
+  if (FORCED_DARK_DESIGN_THEMES.has(designTheme)) return
   const currentTheme =
     document.documentElement.getAttribute("data-theme") || "light"
   const newTheme = currentTheme === "dark" ? "light" : "dark"
@@ -136,19 +136,31 @@ function setDesignTheme(designTheme) {
   document.documentElement.setAttribute("data-design-theme", safeDesignTheme)
   localStorage.setItem("designTheme", safeDesignTheme)
 
-  if (safeDesignTheme === "terminal") {
-    if (previousDesignTheme !== "terminal") {
+  const willForceDark = FORCED_DARK_DESIGN_THEMES.has(safeDesignTheme)
+  const didForceDark = FORCED_DARK_DESIGN_THEMES.has(previousDesignTheme)
+
+  if (willForceDark) {
+    if (!didForceDark) {
       const currentTheme =
         document.documentElement.getAttribute("data-theme") || "light"
-      localStorage.setItem("themeBeforeTerminal", currentTheme)
+      localStorage.setItem(THEME_BEFORE_FORCED_KEY, currentTheme)
     }
     setTheme("dark")
-  } else if (previousDesignTheme === "terminal") {
-    const restoreTheme = localStorage.getItem("themeBeforeTerminal")
+  } else if (didForceDark) {
+    const restoreTheme =
+      localStorage.getItem(THEME_BEFORE_FORCED_KEY) ||
+      localStorage.getItem("themeBeforeTerminal")
     if (restoreTheme === "dark" || restoreTheme === "light") {
       setTheme(restoreTheme)
     }
+    localStorage.removeItem(THEME_BEFORE_FORCED_KEY)
     localStorage.removeItem("themeBeforeTerminal")
+  }
+
+  if (themeToggle) {
+    themeToggle.disabled = willForceDark
+    themeToggle.setAttribute("aria-disabled", willForceDark ? "true" : "false")
+    themeToggle.tabIndex = willForceDark ? -1 : 0
   }
 }
 
@@ -159,10 +171,9 @@ function getDesignThemeLabel(designTheme) {
   if (optionEl) return optionEl.textContent?.trim() || "流光"
   const fallback = {
     fluent: "流光",
-    aurora: "极光",
-    forest: "森林",
-    sunset: "日落",
+    "material-you": "Material You",
     terminal: "终端",
+    cyberpunk: "Cyberpunk",
   }
   return fallback[designTheme] || "流光"
 }
@@ -192,6 +203,16 @@ function setDesignThemeMenuOpen(open) {
 
 function getCurrentDesignTheme() {
   return document.documentElement.getAttribute("data-design-theme") || "fluent"
+}
+
+const titleEl = document.querySelector(".title")
+if (titleEl && !titleEl.dataset.text) {
+  titleEl.dataset.text = titleEl.textContent?.trim() || ""
+}
+
+const subtitleEl = document.querySelector(".subtitle")
+if (subtitleEl && !subtitleEl.dataset.text) {
+  subtitleEl.dataset.text = subtitleEl.textContent?.trim() || ""
 }
 
 // 初始化主题
