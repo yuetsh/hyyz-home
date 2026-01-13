@@ -81,37 +81,186 @@ document.querySelector("#sites").innerHTML =
   pins.map(pin).join("") + sites.map(item).join("")
 
 // 主题切换功能
-const themeToggle = document.getElementById("themeToggle");
+const themeToggle = document.getElementById("themeToggle")
+const designThemeButton = document.getElementById("designThemeButton")
+const designThemeList = document.getElementById("designThemeList")
+
+const DESIGN_THEMES = ["fluent", "aurora", "forest", "sunset", "terminal"]
 
 // 获取保存的主题或系统偏好
 function getInitialTheme() {
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = localStorage.getItem("theme")
   if (savedTheme) {
-    return savedTheme;
+    return savedTheme
   }
   // 如果没有保存的主题，使用系统偏好
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
-    : "light";
+    : "light"
 }
 
 // 应用主题
 function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme", theme)
+  localStorage.setItem("theme", theme)
   // 图标通过 CSS 自动切换显示
 }
 
 // 切换主题
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  setTheme(newTheme);
+  if (
+    document.documentElement.getAttribute("data-design-theme") === "terminal"
+  ) {
+    return
+  }
+  const currentTheme =
+    document.documentElement.getAttribute("data-theme") || "light"
+  const newTheme = currentTheme === "dark" ? "light" : "dark"
+  setTheme(newTheme)
+}
+
+function getInitialDesignTheme() {
+  const savedDesignTheme = localStorage.getItem("designTheme")
+  if (savedDesignTheme && DESIGN_THEMES.includes(savedDesignTheme)) {
+    return savedDesignTheme
+  }
+  return "fluent"
+}
+
+function setDesignTheme(designTheme) {
+  const safeDesignTheme = DESIGN_THEMES.includes(designTheme)
+    ? designTheme
+    : "fluent"
+  const previousDesignTheme =
+    document.documentElement.getAttribute("data-design-theme") || "fluent"
+  document.documentElement.setAttribute("data-design-theme", safeDesignTheme)
+  localStorage.setItem("designTheme", safeDesignTheme)
+
+  if (safeDesignTheme === "terminal") {
+    if (previousDesignTheme !== "terminal") {
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme") || "light"
+      localStorage.setItem("themeBeforeTerminal", currentTheme)
+    }
+    setTheme("dark")
+  } else if (previousDesignTheme === "terminal") {
+    const restoreTheme = localStorage.getItem("themeBeforeTerminal")
+    if (restoreTheme === "dark" || restoreTheme === "light") {
+      setTheme(restoreTheme)
+    }
+    localStorage.removeItem("themeBeforeTerminal")
+  }
+}
+
+function getDesignThemeLabel(designTheme) {
+  const optionEl = designThemeList?.querySelector(
+    `[role="option"][data-value="${designTheme}"]`,
+  )
+  if (optionEl) return optionEl.textContent?.trim() || "流光"
+  const fallback = {
+    fluent: "流光",
+    aurora: "极光",
+    forest: "森林",
+    sunset: "日落",
+    terminal: "终端",
+  }
+  return fallback[designTheme] || "流光"
+}
+
+function setSelectedDesignThemeUI(designTheme) {
+  if (!designThemeList) return
+  const options = [...designThemeList.querySelectorAll('[role="option"]')]
+  options.forEach((el) => {
+    el.setAttribute(
+      "aria-selected",
+      el.getAttribute("data-value") === designTheme ? "true" : "false",
+    )
+  })
+  if (designThemeButton) {
+    designThemeButton.textContent = getDesignThemeLabel(designTheme)
+  }
+}
+
+function setDesignThemeMenuOpen(open) {
+  if (!designThemeButton || !designThemeList) return
+  designThemeButton.setAttribute("aria-expanded", open ? "true" : "false")
+  designThemeList.hidden = !open
+  if (open) {
+    designThemeList.focus()
+  }
+}
+
+function getCurrentDesignTheme() {
+  return document.documentElement.getAttribute("data-design-theme") || "fluent"
 }
 
 // 初始化主题
-const initialTheme = getInitialTheme();
-setTheme(initialTheme);
+const initialTheme = getInitialTheme()
+setTheme(initialTheme)
+
+const initialDesignTheme = getInitialDesignTheme()
+setDesignTheme(initialDesignTheme)
+setSelectedDesignThemeUI(initialDesignTheme)
+setDesignThemeMenuOpen(false)
+
+if (designThemeButton && designThemeList) {
+  designThemeButton.addEventListener("click", () => {
+    const isOpen = designThemeButton.getAttribute("aria-expanded") === "true"
+    setDesignThemeMenuOpen(!isOpen)
+  })
+
+  designThemeList.addEventListener("click", (e) => {
+    const option = e.target.closest?.('[role="option"][data-value]')
+    if (!option) return
+    const value = option.getAttribute("data-value")
+    setDesignTheme(value)
+    setSelectedDesignThemeUI(value)
+    setDesignThemeMenuOpen(false)
+  })
+
+  document.addEventListener("click", (e) => {
+    if (!designThemeButton || !designThemeList) return
+    const clickedInside =
+      designThemeButton.contains(e.target) || designThemeList.contains(e.target)
+    if (!clickedInside) setDesignThemeMenuOpen(false)
+  })
+
+  document.addEventListener("keydown", (e) => {
+    const isOpen = designThemeButton.getAttribute("aria-expanded") === "true"
+    if (!isOpen) return
+
+    if (e.key === "Escape") {
+      e.preventDefault()
+      setDesignThemeMenuOpen(false)
+      designThemeButton.focus()
+      return
+    }
+
+    const options = [...designThemeList.querySelectorAll('[role="option"]')]
+    if (!options.length) return
+    const current = getCurrentDesignTheme()
+    const currentIndex = Math.max(
+      0,
+      options.findIndex((el) => el.getAttribute("data-value") === current),
+    )
+
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault()
+      const delta = e.key === "ArrowDown" ? 1 : -1
+      const nextIndex = (currentIndex + delta + options.length) % options.length
+      const nextValue = options[nextIndex].getAttribute("data-value")
+      setDesignTheme(nextValue)
+      setSelectedDesignThemeUI(nextValue)
+      return
+    }
+
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault()
+      setDesignThemeMenuOpen(false)
+      designThemeButton.focus()
+    }
+  })
+}
 
 // 监听系统主题变化（仅在用户未手动设置时）
 window
@@ -119,9 +268,9 @@ window
   .addEventListener("change", (e) => {
     // 如果用户没有手动设置过主题，则跟随系统
     if (!localStorage.getItem("theme")) {
-      setTheme(e.matches ? "dark" : "light");
+      setTheme(e.matches ? "dark" : "light")
     }
-  });
+  })
 
 // 绑定点击事件
-themeToggle.addEventListener("click", toggleTheme);
+themeToggle.addEventListener("click", toggleTheme)

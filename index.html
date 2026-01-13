@@ -9,10 +9,54 @@
   </head>
 
   <body>
-    <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换深色/浅色模式">
-      <img src="/icons/moon.svg" alt="月亮" class="theme-icon theme-icon-moon" />
-      <img src="/icons/sun.svg" alt="太阳" class="theme-icon theme-icon-sun" />
-    </button>
+    <div class="theme-controls">
+      <label class="design-theme">
+        <span class="visually-hidden">设计主题</span>
+        <button
+          class="design-theme-button"
+          id="designThemeButton"
+          type="button"
+          aria-label="设计主题"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          aria-controls="designThemeList"
+        >
+          流光
+        </button>
+        <ul
+          class="design-theme-list"
+          id="designThemeList"
+          role="listbox"
+          tabindex="-1"
+          hidden
+        >
+          <li role="option" data-value="fluent" aria-selected="true">流光</li>
+          <li role="option" data-value="aurora" aria-selected="false">极光</li>
+          <li role="option" data-value="forest" aria-selected="false">森林</li>
+          <li role="option" data-value="sunset" aria-selected="false">日落</li>
+          <li role="option" data-value="terminal" aria-selected="false">
+            终端
+          </li>
+        </ul>
+      </label>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="切换主题"
+        title="切换深色/浅色模式"
+      >
+        <img
+          src="/icons/moon.svg"
+          alt="月亮"
+          class="theme-icon theme-icon-moon"
+        />
+        <img
+          src="/icons/sun.svg"
+          alt="太阳"
+          class="theme-icon theme-icon-sun"
+        />
+      </button>
+    </div>
     <div id="app">
       <div class="container">
         <main class="main">
@@ -24,16 +68,13 @@
           <a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer">
             浙ICP备2023044109号
           </a>
-          <div>
-            <img src="/备案图标.png" alt="备案图标" />
-            <a
-              href="https://beian.mps.gov.cn/#/query/webSearch?code=33100402331786"
-              rel="noreferrer"
-              target="_blank"
-            >
-              浙公网安备33100402331786号
-            </a>
-          </div>
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=33100402331786"
+            rel="noreferrer"
+            target="_blank"
+          >
+            浙公网安备33100402331786号
+          </a>
         </div>
       </div>
     </div>
