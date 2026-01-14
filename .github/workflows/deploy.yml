@@ -5,46 +5,40 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
-  deploy-debian:
+  deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: debian
+            build_command: build
+            remote_host: ${{ secrets.HOST }}
+            remote_port: 22
+          - name: school
+            build_command: build:staging
+            remote_host: ${{ secrets.HOST }}
+            remote_port: 8822
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'npm'
-      - run: npm install
-      - run: CI=false npm run build
-      
+          cache: npm
+      - run: npm ci
+      - run: npm run ${{ matrix.build_command }}
+        env:
+          CI: false
+
       - uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          REMOTE_HOST: ${{ secrets.HOST }}
-          ARGS: "-avzr --delete"
-          SOURCE: dist/
-          REMOTE_USER: root
-          TARGET: /root/Home/build
-
-
-  deploy-school:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'npm'
-      - run: npm install
-      - run: CI=false npm run build:staging
-      
-      - uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          REMOTE_HOST: ${{ secrets.HOST }}
-          REMOTE_PORT: 8822
+          REMOTE_HOST: ${{ matrix.remote_host }}
+          REMOTE_PORT: ${{ matrix.remote_port }}
           ARGS: "-avzr --delete"
           SOURCE: dist/
           REMOTE_USER: root
