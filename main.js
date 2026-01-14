@@ -37,6 +37,12 @@ const sites = [
     icon: "noto--bookmark-tabs.svg",
   },
   {
+    url: import.meta.env.VITE_BLOCKLY,
+    title: "小方块",
+    description: "搭积木，学编程",
+    icon: "twemoji--brick.svg",
+  },
+  {
     url: import.meta.env.VITE_HUABU,
     title: "白板",
     description: "在线板书",
