@@ -16,11 +16,9 @@ jobs:
         include:
           - name: debian
             build_command: build
-            remote_host: ${{ secrets.HOST }}
             remote_port: 22
           - name: school
             build_command: build:staging
-            remote_host: ${{ secrets.HOST }}
             remote_port: 8822
     steps:
       - uses: actions/checkout@v5
@@ -37,7 +35,7 @@ jobs:
       - uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          REMOTE_HOST: ${{ matrix.remote_host }}
+          REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_PORT: ${{ matrix.remote_port }}
           ARGS: "-avzr --delete"
           SOURCE: dist/
