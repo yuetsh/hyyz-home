@@ -11,7 +11,9 @@
   <body>
     <div class="theme-controls">
       <label class="design-theme">
-        <span class="visually-hidden">设计主题</span>
+        <span class="visually-hidden" data-i18n="designThemeLabel"
+          >设计主题</span
+        >
         <button
           class="design-theme-button"
           id="designThemeButton"
@@ -42,6 +44,38 @@
           </li>
         </ul>
       </label>
+      <label class="design-theme language-switch">
+        <span class="visually-hidden" data-i18n="languageLabel">语言</span>
+        <button
+          class="design-theme-button"
+          id="languageButton"
+          type="button"
+          aria-label="语言"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          aria-controls="languageList"
+        >
+          中文
+        </button>
+        <ul
+          class="design-theme-list"
+          id="languageList"
+          role="listbox"
+          tabindex="-1"
+          hidden
+        >
+          <li role="option" data-value="zh-Hans" aria-selected="true">
+            简体中文
+          </li>
+          <li role="option" data-value="zh-Hant" aria-selected="false">
+            繁體中文
+          </li>
+          <li role="option" data-value="ja" aria-selected="false">日本語</li>
+          <li role="option" data-value="ko" aria-selected="false">한국어</li>
+          <li role="option" data-value="en" aria-selected="false">English</li>
+          <li role="option" data-value="meow" aria-selected="false">喵喵喵</li>
+        </ul>
+      </label>
       <button
         class="theme-toggle"
         id="themeToggle"
@@ -63,20 +97,20 @@
     <div id="app">
       <div class="container">
         <main class="main">
-          <h1 class="title">物联网专业の在线学习平台</h1>
+          <h1 class="title" data-i18n="appTitle">物联网专业の在线学习平台</h1>
           <h2 class="subtitle"></h2>
           <div class="grid" id="sites"></div>
         </main>
         <div class="beian">
           <a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer">
-            浙ICP备2023044109号
+            <span data-i18n="beianIcp">浙ICP备2023044109号</span>
           </a>
           <a
             href="https://beian.mps.gov.cn/#/query/webSearch?code=33100402331786"
             rel="noreferrer"
             target="_blank"
           >
-            浙公网安备33100402331786号
+            <span data-i18n="beianMps">浙公网安备33100402331786号</span>
           </a>
         </div>
       </div>

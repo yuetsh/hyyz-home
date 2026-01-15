@@ -217,9 +217,8 @@ a {
   align-items: center;
 }
 
-.design-theme-button {
-  height: 44px;
-  min-width: 118px;
+.design-theme-button,
+.theme-toggle {
   border: 1px solid var(--control-border);
   border-radius: 12px;
   background: var(--control-bg);
@@ -229,10 +228,15 @@ a {
     0 2px 8px rgba(0, 0, 0, 0.08),
     0 1px 2px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 var(--control-inset);
-  padding: 0 34px 0 14px;
-  font: inherit;
   color: var(--control-fg);
   cursor: pointer;
+}
+
+.design-theme-button {
+  height: 44px;
+  min-width: 118px;
+  padding: 0 34px 0 14px;
+  font: inherit;
   text-align: center;
   justify-content: center;
   position: relative;
@@ -266,8 +270,6 @@ a {
   left: 50%;
   transform: translateX(-50%);
   min-width: 160px;
-  max-height: 240px;
-  overflow: auto;
   padding: 6px;
   margin: 0;
   list-style: none;
@@ -322,17 +324,6 @@ html[data-theme="dark"]:not([data-design-theme="terminal"]) .design-theme-list {
 .theme-toggle {
   width: 44px;
   height: 44px;
-  border: none;
-  border-radius: 12px;
-  background: var(--control-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid var(--control-border);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 var(--control-inset);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
