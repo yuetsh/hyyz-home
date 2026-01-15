@@ -81,6 +81,7 @@ export function initApp() {
     if (language === "zh-Hant") return "zh-Hant"
     if (language === "zh-Hans") return "zh-Hans"
     if (language === "wenyan") return "zh-Hans"
+    if (language === "mars") return "zh-Hans"
     if (language === "ja") return "ja"
     if (language === "ko") return "ko"
     return "en"

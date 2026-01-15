@@ -71,6 +71,18 @@ export const I18N = {
     beianIcp: "浙ICP备2023044109号",
     beianMps: "浙公安备33100402331786号",
   },
+  mars: {
+    appTitle: "物↗聯☆網↘專★業☆線★↗上★～學↘塾",
+    pinnedSubtitle: "置↗頂★內→↘容氵",
+    designThemeLabel: "設↗計☆主↘題",
+    themeToggleLabel: "切↗換★主↘…題孒",
+    themeToggleTitle: "切↗換★晦钅↘明～",
+    moonAlt: "月",
+    sunAlt: "日",
+    languageLabel: "語↗言",
+    beianIcp: "浙↗ICP☆★備吖202訁3044109★號",
+    beianMps: "浙↘公★勒安備33氵100勒40孒2★331786號",
+  },
   garbled: {
     appTitle: "糊斤▥烫斤拷▦噪¿ä¢çèä",
     pinnedSubtitle: "¨¢糊◾¬¿",
@@ -106,6 +118,18 @@ export const I18N = {
     languageLabel: "喵喵",
     beianIcp: "喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵",
     beianMps: "喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵",
+  },
+  emoji: {
+    appTitle: "📡🎓📚🌐🧠",
+    pinnedSubtitle: "📌",
+    designThemeLabel: "🎨",
+    themeToggleLabel: "🌓",
+    themeToggleTitle: "🌗/🌕",
+    moonAlt: "🌙",
+    sunAlt: "☀️",
+    languageLabel: "🌐",
+    beianIcp: "🧾 ICP 2023044109",
+    beianMps: "🛡️ MPS 33100402331786",
   },
 }
 
@@ -146,6 +170,12 @@ export const DESIGN_THEME_LABELS = {
     terminal: "终端",
     cyberpunk: "赛博",
   },
+  mars: {
+    fluent: "流↗光",
+    "material-you": "材↘質",
+    terminal: "終↗★端",
+    cyberpunk: "賽↘！博",
+  },
   garbled: {
     fluent: "◼è▦",
     "material-you": "拷▤屯ä锟◽",
@@ -164,6 +194,12 @@ export const DESIGN_THEME_LABELS = {
     terminal: "喵喵",
     cyberpunk: "喵喵喵喵",
   },
+  emoji: {
+    fluent: "💧",
+    "material-you": "🧱",
+    terminal: "⌨️",
+    cyberpunk: "⚡",
+  },
 }
 
 export const LANGUAGE_NAMES = {
@@ -173,9 +209,11 @@ export const LANGUAGE_NAMES = {
   ja: "日本語",
   ko: "한국어",
   wenyan: "文言文",
+  mars: "非★主☆流",
   garbled: "GBK乱码",
   bin: "计算机语",
   meow: "喵喵喵",
+  emoji: "😅😅😅",
 }
 
 export const LANGUAGE_KEY = "language"
