@@ -3,8 +3,7 @@ import { getLocalizedText } from "./i18n.js"
 const renderItem = (site, language) => {
   const title = getLocalizedText(site.title, language)
   const description = getLocalizedText(site.description, language)
-  const iconName =
-    language === "meow" ? "noto--cat-face.svg" : site.icon
+  const iconName = language === "meow" ? "noto--cat-face.svg" : site.icon
   return `
 <a href="${site.url}" target="_blank" class="card">
 <div class="title-icon">

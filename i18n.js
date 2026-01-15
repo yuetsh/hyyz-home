@@ -59,17 +59,41 @@ export const I18N = {
     beianIcp: "저장 ICP 2023044109",
     beianMps: "저장 공안 33100402331786",
   },
-  es: {
-    appTitle: "Plataforma de aprendizaje en linea de IoT",
-    pinnedSubtitle: "Fijado",
-    designThemeLabel: "Tema de diseno",
-    themeToggleLabel: "Cambiar tema",
-    themeToggleTitle: "Cambiar modo oscuro/claro",
-    moonAlt: "Luna",
-    sunAlt: "Sol",
-    languageLabel: "Idioma",
-    beianIcp: "ICP de Zhejiang 2023044109",
-    beianMps: "Seguridad publica de Zhejiang 33100402331786",
+  wenyan: {
+    appTitle: "物联网专业线上学塾",
+    pinnedSubtitle: "置顶",
+    designThemeLabel: "设计之式",
+    themeToggleLabel: "易其主题",
+    themeToggleTitle: "更晦明",
+    moonAlt: "月",
+    sunAlt: "日",
+    languageLabel: "语言",
+    beianIcp: "浙ICP备2023044109号",
+    beianMps: "浙公安备33100402331786号",
+  },
+  garbled: {
+    appTitle: "糊斤▥烫斤拷▦噪¿ä¢çèä",
+    pinnedSubtitle: "¨¢糊◾¬¿",
+    designThemeLabel: "¬æ◽ä◾▩",
+    themeToggleLabel: "ä斤¿è▣拷",
+    themeToggleTitle: "▥¬糊¬烫è拷ç¿",
+    moonAlt: "¥æ½",
+    sunAlt: "¥▤锟",
+    languageLabel: "¿锟屯",
+    beianIcp: "å锟æ¨å屯¥◾▨",
+    beianMps: "¿噪斤ä屯斤½æ屯ç▩",
+  },
+  bin: {
+    appTitle: "0101010101010101",
+    pinnedSubtitle: "010101",
+    designThemeLabel: "0101010101",
+    themeToggleLabel: "01010101",
+    themeToggleTitle: "010101010101010101",
+    moonAlt: "0101",
+    sunAlt: "1010",
+    languageLabel: "010101",
+    beianIcp: "01010101010101010101",
+    beianMps: "0101010101010101010101",
   },
   meow: {
     appTitle: "喵喵喵喵喵喵喵喵喵喵喵喵",
@@ -116,11 +140,23 @@ export const DESIGN_THEME_LABELS = {
     terminal: "터미널",
     cyberpunk: "사이버펑크",
   },
-  es: {
-    fluent: "Fluent",
-    "material-you": "Material You",
-    terminal: "Terminal",
-    cyberpunk: "Cyberpunk",
+  wenyan: {
+    fluent: "流光",
+    "material-you": "物材",
+    terminal: "终端",
+    cyberpunk: "赛博",
+  },
+  garbled: {
+    fluent: "◼è▦",
+    "material-you": "拷▤屯ä锟◽",
+    terminal: "¥¬▤▨¿¿",
+    cyberpunk: "◼çæ¥烫¥",
+  },
+  bin: {
+    fluent: "0101",
+    "material-you": "010101",
+    terminal: "01010101",
+    cyberpunk: "0101010101",
   },
   meow: {
     fluent: "喵喵",
@@ -136,7 +172,9 @@ export const LANGUAGE_NAMES = {
   en: "English",
   ja: "日本語",
   ko: "한국어",
-  es: "Espanol",
+  wenyan: "文言文",
+  garbled: "GBK乱码",
+  bin: "计算机语",
   meow: "喵喵喵",
 }
 
@@ -146,9 +184,7 @@ export const SUPPORTED_LANGUAGES = Object.keys(LANGUAGE_NAMES)
 export function getLocalizedText(value, language) {
   if (!value) return ""
   if (typeof value === "object") {
-    return (
-      value[language] || value["zh-Hans"]
-    )
+    return value[language] || value["zh-Hans"]
   }
   return value
 }
@@ -164,7 +200,6 @@ export function getInitialLanguage() {
   }
   if (normalized.startsWith("ja")) return "ja"
   if (normalized.startsWith("ko")) return "ko"
-  if (normalized.startsWith("es")) return "es"
   return "zh-Hans"
 }
 
