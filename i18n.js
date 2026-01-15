@@ -59,6 +59,18 @@ export const I18N = {
     beianIcp: "저장 ICP 2023044109",
     beianMps: "저장 공안 33100402331786",
   },
+  es: {
+    appTitle: "Plataforma de aprendizaje en linea de IoT",
+    pinnedSubtitle: "Fijado",
+    designThemeLabel: "Tema de diseno",
+    themeToggleLabel: "Cambiar tema",
+    themeToggleTitle: "Cambiar modo oscuro/claro",
+    moonAlt: "Luna",
+    sunAlt: "Sol",
+    languageLabel: "Idioma",
+    beianIcp: "ICP de Zhejiang 2023044109",
+    beianMps: "Seguridad publica de Zhejiang 33100402331786",
+  },
   meow: {
     appTitle: "喵喵喵喵喵喵喵喵喵喵喵喵",
     pinnedSubtitle: "喵喵喵喵",
@@ -104,6 +116,12 @@ export const DESIGN_THEME_LABELS = {
     terminal: "터미널",
     cyberpunk: "사이버펑크",
   },
+  es: {
+    fluent: "Fluent",
+    "material-you": "Material You",
+    terminal: "Terminal",
+    cyberpunk: "Cyberpunk",
+  },
   meow: {
     fluent: "喵喵",
     "material-you": "喵喵喵",
@@ -118,6 +136,7 @@ export const LANGUAGE_NAMES = {
   en: "English",
   ja: "日本語",
   ko: "한국어",
+  es: "Espanol",
   meow: "喵喵喵",
 }
 
@@ -145,6 +164,7 @@ export function getInitialLanguage() {
   }
   if (normalized.startsWith("ja")) return "ja"
   if (normalized.startsWith("ko")) return "ko"
+  if (normalized.startsWith("es")) return "es"
   return "zh-Hans"
 }
 
