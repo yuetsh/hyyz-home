@@ -33,7 +33,7 @@ jobs:
           CI: false
 
       - uses: easingthemes/ssh-deploy@main
-        env:
+        with:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_PORT: ${{ matrix.remote_port }}
