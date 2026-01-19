@@ -28,7 +28,6 @@ export function initApp() {
   const languageButton = document.getElementById("languageButton")
   const languageList = document.getElementById("languageList")
   const titleEl = document.querySelector(".title")
-  const subtitleEl = document.querySelector(".subtitle")
   const designThemeLabelEl = document.querySelector(
     '[data-i18n="designThemeLabel"]',
   )
@@ -68,13 +67,23 @@ export function initApp() {
     }
   }
 
-  function updateSubtitle(language = currentLanguage) {
-    if (!subtitleEl) return
-    if (pins.length) {
-      subtitleEl.textContent = t("pinnedSubtitle", language)
+  function setTitleText(titleText) {
+    if (!titleEl) return
+    const cursorEl = titleEl.querySelector(".title-cursor")
+    if (cursorEl) {
+      let textNode = [...titleEl.childNodes].find(
+        (node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim(),
+      )
+      if (!textNode) {
+        textNode = document.createTextNode(titleText)
+        titleEl.insertBefore(textNode, cursorEl)
+      } else {
+        textNode.nodeValue = titleText
+      }
     } else {
-      subtitleEl.textContent = subtitleEl.dataset.text || ""
+      titleEl.textContent = titleText
     }
+    titleEl.dataset.text = titleText
   }
 
   function getDocumentLang(language) {
@@ -115,8 +124,7 @@ export function initApp() {
     document.title = t("appTitle", language)
     if (titleEl) {
       const titleText = t("appTitle", language)
-      titleEl.textContent = titleText
-      titleEl.dataset.text = titleText
+      setTitleText(titleText)
     }
     if (designThemeLabelEl) {
       designThemeLabelEl.textContent = t("designThemeLabel", language)
@@ -164,7 +172,6 @@ export function initApp() {
       getLabel: getThemeLabel,
     })
     setSelectedLanguageUI(language)
-    updateSubtitle(language)
     renderSites({ container: sitesContainer, sites, pins, language })
   }
 
@@ -181,9 +188,6 @@ export function initApp() {
     titleEl.dataset.text = titleEl.textContent?.trim() || ""
   }
 
-  if (subtitleEl && !subtitleEl.dataset.text) {
-    subtitleEl.dataset.text = subtitleEl.textContent?.trim() || ""
-  }
 
   const initialTheme = getInitialTheme()
   setTheme(initialTheme)

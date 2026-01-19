@@ -397,7 +397,7 @@ html[data-theme="dark"]:not([data-design-theme="terminal"])
 }
 
 .main {
-  padding: 3rem 0;
+  padding: 4rem 3rem 0 3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -412,9 +412,13 @@ html[data-theme="dark"]:not([data-design-theme="terminal"])
   font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0;
   color: #1a1a1a;
   letter-spacing: -0.02em;
+}
+
+.title-cursor {
+  display: none;
 }
 
 /* Fluent 2 风格的标题渐变 - 使用 Fluent 蓝系 */
@@ -583,8 +587,7 @@ html[data-theme="dark"]:not([data-design-theme="terminal"])
 }
 
 .beian {
-  margin-bottom: 24px;
-  margin-top: 32px;
+  margin: 24px 0;
   text-align: center;
 }
 
@@ -918,41 +921,9 @@ html[data-design-theme="cyberpunk"] .title {
   animation: cyberpunk-rgbShift 4.5s ease-in-out infinite;
 }
 
-html[data-design-theme="cyberpunk"] .title::before,
-html[data-design-theme="cyberpunk"] .title::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  pointer-events: none;
-  opacity: 0.65;
-  mix-blend-mode: screen;
-}
 
-html[data-design-theme="cyberpunk"] .title::before {
-  transform: translate3d(-2px, 0, 0);
-  color: rgba(255, 0, 255, 0.85);
-  animation: cyberpunk-glitch 6.2s steps(2, end) infinite;
-}
-
-html[data-design-theme="cyberpunk"] .title::after {
-  transform: translate3d(2px, 0, 0);
-  color: rgba(0, 212, 255, 0.85);
-  animation: cyberpunk-glitch 5.3s steps(2, end) infinite reverse;
-}
-
-html[data-design-theme="cyberpunk"] .subtitle {
-  color: var(--cyber-muted-fg);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-html[data-design-theme="cyberpunk"] .subtitle::after {
-  content: "\2588";
-  margin-left: 8px;
-  color: rgba(var(--accent-rgb), 0.85);
-  animation: cyberpunk-blink 1s step-end infinite;
+html[data-design-theme="cyberpunk"] .title-cursor {
+  display: none;
 }
 
 html[data-design-theme="cyberpunk"] .card {
@@ -1036,7 +1007,6 @@ html[data-design-theme="cyberpunk"] .beian a:hover {
   html[data-design-theme="cyberpunk"] .title,
   html[data-design-theme="cyberpunk"] .title::before,
   html[data-design-theme="cyberpunk"] .title::after,
-  html[data-design-theme="cyberpunk"] .subtitle::after,
   html[data-design-theme="cyberpunk"] .card {
     animation: none !important;
     transition-duration: 0.01ms !important;
