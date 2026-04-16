@@ -1,4 +1,4 @@
-const DESIGN_THEMES = ["fluent", "material-you", "terminal", "cyberpunk"]
+const DESIGN_THEMES = ["fluent", "material-you", "terminal", "cyberpunk", "nord"]
 const FORCED_DARK_DESIGN_THEMES = new Set(["terminal", "cyberpunk"])
 const THEME_BEFORE_FORCED_KEY = "themeBeforeForcedDark"
 

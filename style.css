@@ -1405,3 +1405,178 @@ html[data-design-theme="material-you"] .beian a:hover {
     transform: none !important;
   }
 }
+
+/* ─── Nord (nordtheme.com) ──────────────────────────────── */
+/* Default: Polar Night (dark) */
+html[data-design-theme="nord"] {
+  color-scheme: dark;
+
+  --accent: #88c0d0;
+  --accent-rgb: 136, 192, 208;
+  --accent-2: #81a1c1;
+  --accent-3: #5e81ac;
+  --accent-secondary-rgb: 129, 161, 193;
+
+  --page-gradient: #2e3440;
+  --page-texture: none;
+  --title-gradient: linear-gradient(135deg, #88c0d0 0%, #81a1c1 50%, #5e81ac 100%);
+
+  --control-bg: rgba(59, 66, 82, 0.85);
+  --control-border: rgba(76, 86, 106, 0.6);
+  --control-inset: rgba(67, 76, 94, 0.5);
+  --control-fg: #eceff4;
+}
+
+/* Re-assert Nord dark variables after generic dark mode overrides them */
+html[data-theme="dark"][data-design-theme="nord"] {
+  color-scheme: dark;
+
+  --accent: #88c0d0;
+  --accent-rgb: 136, 192, 208;
+  --accent-2: #81a1c1;
+  --accent-3: #5e81ac;
+  --accent-secondary-rgb: 129, 161, 193;
+
+  --page-gradient: #2e3440;
+  --page-texture: none;
+  --title-gradient: linear-gradient(135deg, #88c0d0 0%, #81a1c1 50%, #5e81ac 100%);
+
+  --control-bg: rgba(59, 66, 82, 0.85);
+  --control-border: rgba(76, 86, 106, 0.6);
+  --control-inset: rgba(67, 76, 94, 0.5);
+  --control-fg: #eceff4;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] body {
+  color: #eceff4;
+}
+
+/* Snow Storm (light mode) */
+html[data-theme="light"][data-design-theme="nord"] {
+  color-scheme: light;
+
+  --accent: #5e81ac;
+  --accent-rgb: 94, 129, 172;
+  --accent-2: #81a1c1;
+  --accent-3: #88c0d0;
+  --accent-secondary-rgb: 94, 129, 172;
+
+  --page-gradient: #eceff4;
+  --page-texture: none;
+  --title-gradient: linear-gradient(135deg, #5e81ac 0%, #81a1c1 50%, #88c0d0 100%);
+
+  --control-bg: rgba(229, 233, 240, 0.85);
+  --control-border: rgba(216, 222, 233, 0.8);
+  --control-inset: rgba(236, 239, 244, 0.9);
+  --control-fg: #2e3440;
+}
+
+html[data-theme="light"][data-design-theme="nord"] body {
+  color: #2e3440;
+}
+
+/* Dark cards (Polar Night) */
+html[data-theme="dark"][data-design-theme="nord"] .card {
+  background: #3b4252;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid #4c566a;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card::before {
+  display: none;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card h2 {
+  color: #eceff4;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card:hover h2,
+html[data-theme="dark"][data-design-theme="nord"] .card:focus h2 {
+  color: #88c0d0;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card p {
+  color: #d8dee9;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card:hover p,
+html[data-theme="dark"][data-design-theme="nord"] .card:focus p {
+  color: #e5e9f0;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card:hover,
+html[data-theme="dark"][data-design-theme="nord"] .card:focus {
+  border-color: #88c0d0;
+  box-shadow: 0 4px 16px rgba(136, 192, 208, 0.2);
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .card.pin {
+  background: #434c5e;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Light cards (Snow Storm) */
+html[data-theme="light"][data-design-theme="nord"] .card {
+  background: #e5e9f0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid #d8dee9;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(46, 52, 64, 0.1);
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card::before {
+  display: none;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card h2 {
+  color: #2e3440;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card:hover h2,
+html[data-theme="light"][data-design-theme="nord"] .card:focus h2 {
+  color: #5e81ac;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card p {
+  color: #4c566a;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card:hover p,
+html[data-theme="light"][data-design-theme="nord"] .card:focus p {
+  color: #3b4252;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card:hover,
+html[data-theme="light"][data-design-theme="nord"] .card:focus {
+  border-color: #5e81ac;
+  box-shadow: 0 4px 16px rgba(94, 129, 172, 0.2);
+}
+
+html[data-theme="light"][data-design-theme="nord"] .card.pin {
+  background: #eceff4;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: #d8dee9;
+}
+
+/* Beian links */
+html[data-theme="dark"][data-design-theme="nord"] .beian a {
+  color: #d8dee9;
+}
+
+html[data-theme="dark"][data-design-theme="nord"] .beian a:hover {
+  color: #88c0d0;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .beian a {
+  color: #4c566a;
+}
+
+html[data-theme="light"][data-design-theme="nord"] .beian a:hover {
+  color: #5e81ac;
+}
